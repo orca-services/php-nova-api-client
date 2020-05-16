@@ -49,8 +49,8 @@ final class NovaMessageParser
      */
     private function appendNovaMessages(XmlDocument $xml, array $namespace, array $messages): array
     {
-        $ns1 = (string)$namespace[0];
-        $ns2 = (string)$namespace[1];
+        $ns1 = $namespace[0];
+        $ns2 = $namespace[1];
 
         if ($ns1 && !$xml->existsNamespace($ns1)) {
             return $messages;
