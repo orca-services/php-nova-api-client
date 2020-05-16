@@ -394,7 +394,7 @@ final class XmlDocument
 
             /** @var DOMElement $node */
             foreach ($nodes as $node) {
-                $namespaceUri = $node->lookupNamespaceURI($prefix);
+                $namespaceUri = $node->lookupNamespaceUri($prefix);
                 $node->removeAttributeNS($namespaceUri, $prefix);
             }
         }
