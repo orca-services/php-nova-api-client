@@ -16,6 +16,12 @@ trait UnitTestTrait
     use ContainerTestTrait;
 
     /** {@inheritdoc} */
+    public static function setUpBeforeClass()
+    {
+        date_default_timezone_set('Europe/Zurich');
+    }
+
+    /** {@inheritdoc} */
     protected function setUp()
     {
         $this->createContainer();
