@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <novasp-swisspass:pruefeSwissPassGueltigkeitResponse xmlns:base="http://nova.voev.ch/services/v14/base" xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner" xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass" novasp-swisspass:austausch="false" novasp-swisspass:resultat="SP_NICHT_OK_FOTO_NICHT_OK" novasp-swisspass:status="OK">
+            <novasp-swisspass:meldungen>
+                <base:meldung base:endKundenRelevant="false" base:meldungsCode="130030" base:typ="WARNUNG" base:zeitStempel="2019-09-09T10:55:40.000+02:00">
+                    <base:beschreibung base:defaultWert="Kundendaten sind nicht vollstaendig. Folgende Angaben fehlen: CKM."/>
+                </base:meldung>
+            </novasp-swisspass:meldungen>
+        </novasp-swisspass:pruefeSwissPassGueltigkeitResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

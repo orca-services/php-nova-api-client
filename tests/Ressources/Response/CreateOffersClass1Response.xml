@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header />
+    <soapenv:Body>
+        <ns13:erstelleAngeboteResponse xmlns:ns13="http://nova.voev.ch/services/v14/vertrieb" xmlns:nova-preisauskunft="http://nova.voev.ch/services/v14/preisauskunft" xmlns="http://nova.voev.ch/services/v14/vertrieb" xmlns:offlinemanagement="http://nova.voev.ch/services/v14/vertrieb/offlinemanagement" xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner" xmlns:nova-erneuerungsinfo="http://nova.voev.ch/services/v14/vertrieb/erneuerungsinfo" xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass" xmlns:nova-protokoll="http://nova.voev.ch/services/v14/vertrieb/protokoll" xmlns:vs="http://nova.voev.ch/services/v14/vertrieb/vertriebsstammdaten" xmlns:base="http://nova.voev.ch/services/v14/base" xmlns:vertriebsbase="http://nova.voev.ch/services/v14/vertriebsbase" xmlns:nova-powertools="http://nova.voev.ch/services/v14/powertools" xmlns:nova-leistungnotiz="http://nova.voev.ch/services/v14/leistungnotiz" xmlns:ns14="http://nova.voev.ch/services/v14/leistunganteile" xmlns:ns15="http://nova.voev.ch/services/v14/inkasso">
+            <ns13:angebotsResponse ns13:anfrageProtokollId="f9bd7269-2d29-4b73-8632-b3a5bdc616bf" ns13:datenReleaseId="112.20190930-2001.T.T.9120.0">
+                <ns13:meldungen>
+                    <base:meldung base:id="M0" base:meldungsCode="33098" base:zeitStempel="2019-10-01T16:25:56.000+02:00" base:typ="WARNUNG" base:endKundenRelevant="false">
+                        <base:beschreibung base:defaultWert="Der Reisende 1 erhält kein SwissPass-Angebot, weil er bereits einen gültigen SwissPass, oder einen laufenden Kartenauftrag hat." />
+                    </base:meldung>
+                </ns13:meldungen>
+                <ns13:angebote>
+                    <ns13:angebot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns13:Angebot" ns13:fqCode="(1.)(ABO)(10)" ns13:nachtraeglicheEinlieferungMoeglich="false" ns13:enthaeltSwissPassKarte="false" ns13:benoetigtNeuesFoto="false" ns13:angebotsId="_4d8e28ce-9853-47d4-b7ec-937808dfd000" ns13:generationStichDatum="2019-09-01" ns13:produktNummer="51648" ns13:vorhalteZeitpunktBis="2019-10-01T16:45:56.000+02:00">
+                        <ns13:verkaufsParameter ns13:optional="false">
+                            <ns13:verkaufsParameter vertriebsbase:code="REISENDER" vertriebsbase:wertTyp="TKID">
+                                <vertriebsbase:bezeichnung base:defaultWert="Reisender" base:de="Reisender" base:en="Traveller" base:fr="Voyageur" base:it="Viaggiatore" />
+                            </ns13:verkaufsParameter>
+                        </ns13:verkaufsParameter>
+                        <ns13:verkaufsPreis>
+                            <base:geldBetrag base:betrag="179.00" base:waehrung="CHF" />
+                            <base:mwstAnteil base:betrag="179.00" base:mwstSatz="7.70" />
+                        </ns13:verkaufsPreis>
+                        <ns13:infoTextId>ids__7950206005</ns13:infoTextId>
+                        <ns13:nutzungsInfo ns13:ersterNutzungsGeltungsTag="2019-09-01">
+                            <ns13:tarifStufe>
+                                <ns13:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen" base:en="All Zones" base:fr="Toutes les zones" base:it="Tutte le zone" />
+                            </ns13:tarifStufe>
+                            <ns13:vorverkaufsFrist>
+                                <base:wert>2</base:wert>
+                                <base:einheit base:code="MONATE">
+                                    <base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months" base:fr="Mois" base:it="Mesi" />
+                                </base:einheit>
+                            </ns13:vorverkaufsFrist>
+                            <ns13:nutzungsZeitraum>
+                                <ns13:tarifierbarerZeitraum base:von="2019-09-01T00:00:00.000+02:00" base:bis="2019-10-01T05:00:00.000+02:00" />
+                                <ns13:ausweisbarerZeitraum vertriebsbase:von="2019-09-01" vertriebsbase:bis="2019-09-30" />
+                            </ns13:nutzungsZeitraum>
+                        </ns13:nutzungsInfo>
+                        <ns13:produktEinflussFaktoren ns13:traegerMedium="SWISSPASS" ns13:klasse="KLASSE_1">
+                            <ns13:kundenSegment ns13:kundenSegmentCode="ABO_1KL_VOLLPREIS">
+                                <ns13:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults" base:fr="Adultes" base:it="Adulti" />
+                            </ns13:kundenSegment>
+                            <ns13:geltungsDauer>
+                                <ns13:nutzungsGeltungsDauer>
+                                    <base:wert>1</base:wert>
+                                    <base:einheit base:code="MONATE">
+                                        <base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months" base:fr="Mois" base:it="Mesi" />
+                                    </base:einheit>
+                                </ns13:nutzungsGeltungsDauer>
+                            </ns13:geltungsDauer>
+                        </ns13:produktEinflussFaktoren>
+                        <ns13:geltungsBereichRef>gbd513f70d-eeac-4e24-b227-fc067b89636f</ns13:geltungsBereichRef>
+                        <ns13:bewertungsInfo ns13:raeumlicheFlexibilitaet="VERBUND" ns13:komfort="KLASSE_1" ns13:reisendenBeziehung="KEINE_REISENDENBEZIEHUNG" ns13:teilAngebot="false">
+                            <ns13:zeitlicheFlexibilitaet vertriebsbase:uhrzeitEinschraenkungen="OHNE_UHRZEITEINSCHRAENKUNGEN" vertriebsbase:zonenBefahrungsTyp="RAUMZEIT" />
+                        </ns13:bewertungsInfo>
+                    </ns13:angebot>
+                </ns13:angebote>
+                <ns13:reisende>
+                    <ns13:reisender ns13:id="R1" ns13:externeReisendenReferenzId="1">
+                        <ns13:reisendenBeziehung>KEINE_REISENDENBEZIEHUNG</ns13:reisendenBeziehung>
+                    </ns13:reisender>
+                </ns13:reisende>
+                <ns13:angebotsPakete>
+                    <ns13:angebotsPaket ns13:id="P0" ns13:paketbedingung="SEPARATER_KAUF_MOEGLICH">
+                        <ns13:angebotRefs>_4d8e28ce-9853-47d4-b7ec-937808dfd000</ns13:angebotRefs>
+                        <ns13:reisenderRefs>R1</ns13:reisenderRefs>
+                    </ns13:angebotsPaket>
+                </ns13:angebotsPakete>
+                <ns13:geltungsBereiche>
+                    <ns13:geltungsBereich ns13:id="gbd513f70d-eeac-4e24-b227-fc067b89636f">
+                        <ns13:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+                            <vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+                                <vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen" base:en="All Zones" base:fr="Toutes les zones" base:it="Tutte le zone" />
+                            </vertriebsbase:reiseRouteSegment>
+                        </ns13:wegAngabe>
+                        <ns13:zonenGeltungsBereich>
+                            <ns13:zonenBuendel ns13:pflichtZonenBuendel="false" ns13:alleZonen="true" ns13:tarifOwner="460" ns13:befahrungsTyp="RAUMZEIT" ns13:novaZonenTarifCode="460_MABO_AW_PERS">
+                                <ns13:bezeichnung base:defaultWert=" " />
+                            </ns13:zonenBuendel>
+                        </ns13:zonenGeltungsBereich>
+                        <ns13:streckenGeltungsBereich />
+                    </ns13:geltungsBereich>
+                </ns13:geltungsBereiche>
+            </ns13:angebotsResponse>
+        </ns13:erstelleAngeboteResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

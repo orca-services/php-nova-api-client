@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <novasp-swisspass:pruefeSwissPassGueltigkeitResponse xmlns:base="http://nova.voev.ch/services/v14/base" xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner" xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass" novasp-swisspass:austausch="false" novasp-swisspass:resultat="SP_OK" novasp-swisspass:status="OK">
+            <novasp-swisspass:meldungen/>
+        </novasp-swisspass:pruefeSwissPassGueltigkeitResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

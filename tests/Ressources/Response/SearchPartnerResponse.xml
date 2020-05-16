@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ns1:suchePartnerResponse xmlns:ns1="http://nova.voev.ch/services/v14/geschaeftspartner" xmlns:ns3="http://nova.voev.ch/services/v14/inkasso" xmlns:ns2="http://nova.voev.ch/services/v14/base" ns1:anzahlTreffer="1" ns1:status="OK">
+            <ns1:meldungen/>
+            <ns1:partner xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns1:Person" ns1:titel="Dr." ns1:geburtsDatum="1982-03-28" ns1:geschlecht="MAENNLICH" ns1:verstorben="false" ns1:tkid="949e2e6a-fdd1-4f07-8784-201e588ae834" ns1:ckm="164-937-314-5" ns1:grundkartenNummer="DAW856" ns1:email="max.mustermann@example.com" ns1:korrespondenzSprache="de" ns1:mutDatum="2019-09-02T08:13:28.000+02:00" ns1:forcierung="FORCIERE_NICHTS" ns1:werbung="WERBUNG">
+                <ns1:sitz ns1:istTemporaer="false">
+                    <ns1:adresse ns2:land="CH" ns2:ort="Pratteln" ns2:plz="4133" ns2:strasseHnr="Bahnhofstrasse 1" ns2:postfach="1234" ns2:postfachVorhanden="true"/>
+                </ns1:sitz>
+                <ns1:qualitaetsEigenschaft ns1:qualitaetsEigenschaftCode="QUALITAET_FESTNETZ" ns1:qualitaetsWert="FORMAL_GEPRUEFT" ns1:mutDatum="2019-08-27T12:06:01.000+02:00"/>
+                <ns1:qualitaetsEigenschaft ns1:qualitaetsEigenschaftCode="QUALITAET_SITZ_ADRESSE" ns1:qualitaetsWert="REGEX_GEPRUEFT" ns1:mutDatum="2019-08-27T12:06:01.000+02:00"/>
+                <ns1:qualitaetsEigenschaft ns1:qualitaetsEigenschaftCode="QUALITAET_MOBILE" ns1:qualitaetsWert="FORMAL_GEPRUEFT" ns1:mutDatum="2019-08-27T12:06:01.000+02:00"/>
+                <ns1:qualitaetsEigenschaft ns1:qualitaetsEigenschaftCode="QUALITAET_EMAIL" ns1:qualitaetsWert="FORMAL_GEPRUEFT" ns1:mutDatum="2019-08-27T12:06:01.000+02:00"/>
+                <ns1:qualitaetsEigenschaft ns1:qualitaetsEigenschaftCode="KUBA_GEPRUEFT" ns1:qualitaetsWert="GEPRUEFT" ns1:mutDatum="2019-09-02T08:13:28.000+02:00"/>
+                <ns1:qualitaetsEigenschaft ns1:qualitaetsEigenschaftCode="QUALITAET_GEBURTSDATUM" ns1:qualitaetsWert="GEGEN_AUSWEIS_GEPRUEFT" ns1:mutDatum="2019-08-27T12:05:08.000+02:00"/>
+                <ns1:festnetz ns2:wert="+41612330975" ns2:formatiertE123="+41 61 233 09 75"/>
+                <ns1:mobil ns2:wert="+41792330976" ns2:formatiertE123="+41 79 233 09 76"/>
+                <ns1:name ns2:name="Max" ns2:vorname="Mustermann"/>
+            </ns1:partner>
+        </ns1:suchePartnerResponse>
+    </soapenv:Body>
+</soapenv:Envelope>

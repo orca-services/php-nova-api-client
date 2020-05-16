@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <ns13:bestaetigeProduktionResponse xmlns:ns13="http://nova.voev.ch/services/v14/vertrieb" xmlns:nova-preisauskunft="http://nova.voev.ch/services/v14/preisauskunft" xmlns="http://nova.voev.ch/services/v14/vertrieb" xmlns:offlinemanagement="http://nova.voev.ch/services/v14/vertrieb/offlinemanagement" xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner" xmlns:nova-erneuerungsinfo="http://nova.voev.ch/services/v14/vertrieb/erneuerungsinfo" xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass" xmlns:nova-protokoll="http://nova.voev.ch/services/v14/vertrieb/protokoll" xmlns:vs="http://nova.voev.ch/services/v14/vertrieb/vertriebsstammdaten" xmlns:base="http://nova.voev.ch/services/v14/base" xmlns:vertriebsbase="http://nova.voev.ch/services/v14/vertriebsbase" xmlns:nova-powertools="http://nova.voev.ch/services/v14/powertools" xmlns:nova-leistungnotiz="http://nova.voev.ch/services/v14/leistungnotiz" xmlns:ns14="http://nova.voev.ch/services/v14/leistunganteile" xmlns:ns15="http://nova.voev.ch/services/v14/inkasso">
+            <ns13:bestaetigeProduktionResponse ns13:anfrageProtokollId="c6ad267b-4df7-43fa-912b-b014ff841964" ns13:datenReleaseId="112.20190904-2001.T.T.8863.0">
+                <ns13:meldungen/>
+                <ns13:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns13:Leistung" ns13:enthaeltSwissPassKarte="false" ns13:benoetigtNeuesFoto="false" ns13:leistungsId="15900011821804" ns13:leistungsReferenz="11821804" ns13:leistungsStatus="PRODUKTION_ERFOLGREICH" ns13:offerteGueltigBis="2019-09-05T14:22:21.000+02:00" ns13:verkaufsZeitpunkt="2019-09-05T13:57:50.000+02:00" ns13:erstellungsZeitpunkt="2019-09-05T14:08:29.000+02:00" ns13:produktNummer="51648" ns13:generationStichDatum="2019-09-01" ns13:datenReleaseId="112.20190904-2001.T.T.8863.0">
+                    <ns13:leistungsTyp ns13:code="VERKAUF">
+                        <ns13:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF" base:fr="VERKAUF" base:it="VERKAUF"/>
+                    </ns13:leistungsTyp>
+                    <ns13:verkaufsParameter ns13:code="REISENDER">
+                        <ns13:wert>
+                            <vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+                        </ns13:wert>
+                    </ns13:verkaufsParameter>
+                    <ns13:zahlungsInformation>
+                        <ns13:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+                            <vertriebsbase:bezeichnung base:defaultWert="Bar"/>
+                        </ns13:zahlungsArt>
+                        <ns13:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+                    </ns13:zahlungsInformation>
+                    <ns13:verkaufsPreis>
+                        <base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+                        <base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+                    </ns13:verkaufsPreis>
+                    <ns13:verkaeuferInformation ns13:leistungsVermittler="37" ns13:verkaufsStelle="5318" ns13:vertriebsPunkt="5318" ns13:verkaufsGeraeteId="1">
+                        <ns13:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C" base:bezeichnung="BLT_Online_Barakuda"/>
+                    </ns13:verkaeuferInformation>
+                    <ns13:savProtokoll/>
+                    <ns13:nutzungsInfo ns13:ersterNutzungsGeltungsTag="2019-09-01">
+                        <ns13:tarifStufe>
+                            <ns13:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen" base:en="All Zones" base:fr="Toutes les zones" base:it="Tutte le zone"/>
+                        </ns13:tarifStufe>
+                        <ns13:vorverkaufsFrist>
+                            <base:wert>2</base:wert>
+                            <base:einheit base:code="MONATE">
+                                <base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months" base:fr="Mois" base:it="Mesi"/>
+                            </base:einheit>
+                        </ns13:vorverkaufsFrist>
+                        <ns13:nutzungsZeitraum>
+                            <ns13:tarifierbarerZeitraum base:von="2019-09-01T00:00:00.000+02:00" base:bis="2019-10-01T05:00:00.000+02:00"/>
+                            <ns13:ausweisbarerZeitraum vertriebsbase:von="2019-09-01" vertriebsbase:bis="2019-09-30"/>
+                        </ns13:nutzungsZeitraum>
+                    </ns13:nutzungsInfo>
+                    <ns13:produktEinflussFaktoren ns13:traegerMedium="SWISSPASS" ns13:klasse="KLASSE_2">
+                        <ns13:kundenSegment ns13:kundenSegmentCode="PERSON_25+">
+                            <ns13:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults" base:fr="Adultes" base:it="Adulti"/>
+                        </ns13:kundenSegment>
+                        <ns13:geltungsDauer>
+                            <ns13:nutzungsGeltungsDauer>
+                                <base:wert>1</base:wert>
+                                <base:einheit base:code="MONATE">
+                                    <base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months" base:fr="Mois" base:it="Mesi"/>
+                                </base:einheit>
+                            </ns13:nutzungsGeltungsDauer>
+                        </ns13:geltungsDauer>
+                    </ns13:produktEinflussFaktoren>
+                    <ns13:geltungsBereich ns13:id="gb05e5d1be-bc46-45f4-a5de-d0b54ca01f77">
+                        <ns13:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+                            <vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+                                <vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen" base:en="All Zones" base:fr="Toutes les zones" base:it="Tutte le zone"/>
+                            </vertriebsbase:reiseRouteSegment>
+                        </ns13:wegAngabe>
+                        <ns13:zonenGeltungsBereich>
+                            <ns13:zonenBuendel ns13:pflichtZonenBuendel="false" ns13:alleZonen="true" ns13:tarifOwner="460" ns13:befahrungsTyp="RAUMZEIT">
+                                <ns13:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+                            </ns13:zonenBuendel>
+                        </ns13:zonenGeltungsBereich>
+                        <ns13:streckenGeltungsBereich/>
+                    </ns13:geltungsBereich>
+                </ns13:leistung>
+            </ns13:bestaetigeProduktionResponse>
+        </ns13:bestaetigeProduktionResponse>
+    </soapenv:Body>
+</soapenv:Envelope>
