@@ -24,7 +24,7 @@ built by [SBB](https://www.sbb.ch).
 ## Installation
 
 ```
-composer require orca-services/nova-api-php
+composer require orca-services/nova-api
 ```
 
 ## Usage
