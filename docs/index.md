@@ -12,5 +12,5 @@ A PHP client library for the NOVA API.
 ## Installation
 
 ```
-composer require orca-services/nova-api-php
+composer require orca-services/nova-api
 ```

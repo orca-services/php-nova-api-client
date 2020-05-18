@@ -4,10 +4,10 @@ plugins:
 remote_theme: "pmarsceill/just-the-docs"
 
 # Name of your site (displayed in the header)
-name: Slim 4 Skeleton
+name: NOVA API Client for PHP
 
 # Name of website (site.title)
-title: Slim 4 Skeleton
+title: A NOVA API Client for PHP
 
 # Short description of your site
-description: A Slim 4 example application
+description: A NOVA API Client for PHP
