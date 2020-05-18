@@ -6,7 +6,7 @@ A PHP client library for the NOVA API.
 
 [![Latest Version on Packagist](https://img.shields.io/github/release/orca-services/nova-api-php.svg?style=flat-square)](https://packagist.org/packages/orca-services/nova-api-php)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
-[![Build Status](https://github.com/orca-services/nova-api-php/workflows/php/badge.svg?style=flat-square)](https://github.com/orca-services/nova-api-php/actions)
+[![Build Status](https://github.com/orca-services/nova-api-php/workflows/build/badge.svg?style=flat-square)](https://github.com/orca-services/nova-api-php/actions)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/orca-services/nova-api-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/orca-services/nova-api-php/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/quality/g/orca-services/nova-api-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/orca-services/nova-api-php/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/orca-services/nova-api-php.svg?style=flat-square)](https://packagist.org/packages/orca-services/nova-api-php/stats)
