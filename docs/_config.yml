@@ -4,10 +4,10 @@ plugins:
 remote_theme: "pmarsceill/just-the-docs"
 
 # Name of your site (displayed in the header)
-name: NOVA API Client for PHP
+name: NOVA API Client
 
 # Name of website (site.title)
-title: A NOVA API Client for PHP
+title: NOVA API Client
 
 # Short description of your site
 description: NOVA API Client
