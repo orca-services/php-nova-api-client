@@ -1,5 +1,5 @@
 {
-    "name": "orca-services/nova-api-php",
+    "name": "orca-services/nova-api",
     "description": "A PHP client library for the NOVA API",
     "keywords": [
         "nova",
