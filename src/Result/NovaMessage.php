@@ -5,7 +5,7 @@ namespace OrcaServices\NovaApi\Result;
 /**
  * Element: ns13:meldung.
  */
-class NovaMessage
+final class NovaMessage
 {
     /**
      * @var string|null The value

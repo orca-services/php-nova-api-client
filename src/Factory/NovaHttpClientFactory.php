@@ -11,7 +11,7 @@ use OrcaServices\NovaApi\Parser\NovaApiErrorParser;
 /**
  * Factory.
  */
-class NovaHttpClientFactory
+final class NovaHttpClientFactory
 {
     /**
      * @var NovaApiConfiguration Nova settings
