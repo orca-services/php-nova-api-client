@@ -20,7 +20,7 @@ use Psr\Container\ContainerInterface;
 return [
     // ...
 
-    NovaApiConfiguration::class => static function (ContainerInterface $container) {
+    NovaApiConfiguration::class => function (ContainerInterface $container) {
         $settings = (array)$container->get('settings')['nova'];
 
         return new NovaApiConfiguration($settings);
@@ -36,7 +36,7 @@ Then use dependency injection to get the `NovaApiClient` object.
 use OrcaServices\NovaApi\Client\NovaApiClient;
 // ...
 
-class NovaSwissPassTicketGenerator
+final class NovaSwissPassTicketGenerator
 {
     /**
      * @var NovaApiClient

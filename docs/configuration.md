@@ -28,7 +28,7 @@ webservice | array | [] | The SOAP webservice endpoint (without credentials).
 
 ## Default request settings
 
-* Key: default
+Key: **default**
 
 The documentation for all request parameters can be found in 
 the [Guzzle documentation](http://docs.guzzlephp.org/en/stable/request-options.html).
@@ -59,10 +59,24 @@ the [Guzzle documentation](http://docs.guzzlephp.org/en/stable/request-options.h
 You can create a mocked response queue by defining a custom guzzle handler:
 
 ```php
-'handler' => HandlerStack::create(new MockHandler($responses)),
+<?php
+
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+// ...
+
+$settings = [
+    'default' => [
+        // ...
+        'handler' => HandlerStack::create(new MockHandler($responses)),
+    ],
+];
+
 ```
 
 ## Single Sign On Settings
+
+Key: **sso**
 
 Example:
 
@@ -75,6 +89,8 @@ Example:
 ```
 
 ## Webservice Settings
+
+Key: **webservice**
 
 Don't provide any credentials here, because the single sign on process will set the token for you.
  
