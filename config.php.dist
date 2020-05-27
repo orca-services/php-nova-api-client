@@ -1,0 +1,32 @@
+<?php
+return [
+    // NOVA API version
+    'version' => 'v14',
+    // Default HTTP settings for SSO and the webservice
+    'default' => [
+        'debug' => false,
+        'base_uri' => null,
+        // Should be disabled
+        'cookies' => false,
+        // Accept all SSL certificates (important),
+        // because NOVA regularly changes its SSL root certificates,
+        // and we don't know when that will happen.
+        'verify' => false,
+        'headers' => [
+            'Content-Type' => 'text/xml;charset=UTF-8',
+            'User-Agent' => 'NovaApiClient/1.0',
+        ],
+        'timeout' => 30,
+        'connect_timeout' => 30,
+    ],
+    // Single Sign On
+    'sso' => [
+        'base_uri' => 'https://example.com',
+        'client_id' => '',
+        'client_secret' => '',
+    ],
+    // The NOVA SOAP endpoint
+    'webservice' => [
+        'base_uri' => 'https://example.com',
+    ],
+];

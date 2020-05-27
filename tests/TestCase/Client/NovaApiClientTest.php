@@ -38,8 +38,12 @@ class NovaApiClientTest extends TestCase
     {
         Chronos::setTestNow('2019-09-01 00:00:00');
 
+        $settings = $this->getSettings();
+
         // To make real http calls, just comment out this line
-        $this->mockNovaGuzzleClient($responses);
+        $settings = $this->mockNovaGuzzleClient($responses, $settings);
+
+        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
 
         return $this->getContainer()->get(NovaApiClient::class);
     }
@@ -48,10 +52,11 @@ class NovaApiClientTest extends TestCase
      * Mock NOVA Guzzle client and single sign on (SSO).
      *
      * @param array $responses The mocked responses
+     * @param array $settings The nova api settings
      *
-     * @return void
+     * @return array
      */
-    protected function mockNovaGuzzleClient(array $responses)
+    protected function mockNovaGuzzleClient(array $responses, array $settings): array
     {
         // Append the login as first response
         $loginResponse = new Response();
@@ -61,40 +66,23 @@ class NovaApiClientTest extends TestCase
 
         array_unshift($responses, $loginResponse);
 
-        $settings = [
-            // NOVA API version
-            'version' => 'v14',
-            // Default HTTP settings for SSO and the webservice
-            'default' => [
-                'debug' => false,
-                'base_uri' => null,
-                // Should be disabled
-                'cookies' => false,
-                // Accept all SSL certificates (important),
-                // because NOVA regularly changes its SSL root certificates,
-                // and we don't know when that will happen.
-                'verify' => false,
-                'headers' => [
-                    'Content-Type' => 'text/xml;charset=UTF-8',
-                    'User-Agent' => 'NovaApiClient/1.0',
-                ],
-                'timeout' => 30,
-                'connect_timeout' => 30,
-                'handler' => HandlerStack::create(new MockHandler($responses)),
-            ],
-            // Single Sign On
-            'sso' => [
-                'base_uri' => 'http://localhost',
-                'client_id' => '',
-                'client_secret' => '',
-            ],
-            // The NOVA SOAP endpoint
-            'webservice' => [
-                'base_uri' => 'http://localhost',
-            ],
-        ];
+        $settings['default']['handler'] = HandlerStack::create(new MockHandler($responses));
 
-        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
+        return $settings;
+    }
+
+    /**
+     * Returns the default settings
+     *
+     * @return array
+     */
+    protected function getSettings(): array
+    {
+        $filename = file_exists(__DIR__ . '/../../../config.php')
+            ? '/../../../config.php'
+            : '/../../../config.php.dist';
+
+        return include __DIR__ . $filename;
     }
 
     /**
