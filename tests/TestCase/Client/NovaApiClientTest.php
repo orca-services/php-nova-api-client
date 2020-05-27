@@ -16,6 +16,7 @@ use OrcaServices\NovaApi\Parameter\NovaCreateServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaIdentifierParameter;
 use OrcaServices\NovaApi\Parameter\NovaPurchaseServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchPartnerParameter;
+use OrcaServices\NovaApi\Parameter\NovaSearchServicesParameter;
 use OrcaServices\NovaApi\Test\Traits\UnitTestTrait;
 use OrcaServices\NovaApi\Type\GenderType;
 use PHPUnit\Framework\TestCase;
@@ -481,5 +482,35 @@ class NovaApiClientTest extends TestCase
         );
 
         static::assertEmpty($actual->messages);
+    }
+
+    /**
+     * Test.
+     *
+     * @return void
+     */
+    public function testSearchServicesByTkId()
+    {
+        // Create a mocked response queue
+        $response = new Response();
+        $response->getBody()->write(
+            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchServicesResponse.xml')
+        );
+
+        $client = $this->createNovaApiClient([$response]);
+
+        $parameter = new NovaSearchServicesParameter();
+        $this->setTestIdentifier($parameter);
+        $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
+
+        $actual = $client->searchServices($parameter);
+
+        $this->assertCount(19, $actual->services);
+        $this->assertEquals('949e2e6a-fdd1-4f07-8784-201e588ae834', $actual->services[0]->tkId);
+        $this->assertEquals('2019-09-01 00:00:00', $actual->services[0]->validFrom->toDateTimeString());
+        $this->assertEquals('2019-10-01 05:00:00', $actual->services[0]->validTo->toDateTimeString());
+        $this->assertEquals('51648', $actual->services[0]->productNumber);
+        $this->assertEquals(['100', '123'], $actual->services[0]->zones);
+        $this->assertEquals(['all'], $actual->services[1]->zones);
     }
 }

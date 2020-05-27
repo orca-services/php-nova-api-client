@@ -1,0 +1,1677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ns14:sucheLeistungenResponse xmlns:ns14="http://nova.voev.ch/services/v14/vertrieb"
+									  xmlns:base="http://nova.voev.ch/services/v14/base"
+									  xmlns:vertriebsbase="http://nova.voev.ch/services/v14/vertriebsbase"
+		>
+			<ns14:leistungsSuchResponse ns14:istTeilErgebnis="false"
+										ns14:anfrageProtokollId="faa8bb94-a890-44ae-890e-c9e6fdc50b09"
+										ns14:datenReleaseId="maindev-SNAPSHOT.20200525-1431.T.T.152.0">
+				<ns14:meldungen/>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011821804" ns14:leistungsReferenz="11821804"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-09-05T14:22:21.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-05T13:57:50.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-05T14:08:29.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-01"
+								   ns14:datenReleaseId="112.20190904-2001.T.T.8863.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-01">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-01T00:00:00.000+02:00"
+															base:bis="2019-10-01T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-01"
+														   vertriebsbase:bis="2019-09-30"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb8d17cad0-aa33-4cab-83a2-d22494e9335f">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="false"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+									<pflichtZonenbuendel>false</pflichtZonenbuendel>
+									<alleZonen>false</alleZonen>
+									<zonen>
+										<code>100</code>
+										<zonenOwner>477</zonenOwner>
+									</zonen>
+									<zonen>
+										<code>123</code>
+										<zonenOwner>477</zonenOwner>
+									</zonen>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011821029" ns14:leistungsReferenz="11821029"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-09-05T11:56:14.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-05T11:26:15.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-05T11:26:19.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-08-05"
+								   ns14:datenReleaseId="112.20190904-2001.T.T.8863.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-08-05">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-08-05T00:00:00.000+02:00"
+															base:bis="2019-09-05T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-08-05"
+														   vertriebsbase:bis="2019-09-04"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb638ece5e-7ebc-46f8-ac23-001d8ff08418">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814740" ns14:leistungsReferenz="11814740"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-09-04T14:07:59.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:38:00.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:38:04.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb053d4320-15a2-4654-9a64-28e23ab1336a">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814739" ns14:leistungsReferenz="11814739"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-09-04T14:07:44.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:37:45.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:37:48.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb02e0cd94-cc3c-446d-8463-0df9e2c69e13">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814738" ns14:leistungsReferenz="11814738"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-09-04T14:07:15.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:37:16.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:37:19.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gbfc28f3ce-16ec-431c-9095-f1dab27c43c9">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814737" ns14:leistungsReferenz="11814737"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-09-04T14:05:46.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:35:47.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:36:08.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb00bfa6c6-207f-4dad-8193-e4930d6cd656">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814696" ns14:leistungsReferenz="11814696"
+								   ns14:leistungsStatus="PRODUKTION_BEREIT"
+								   ns14:offerteGueltigBis="2019-09-04T13:49:38.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:19:38.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:19:40.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb430e440a-c1dd-4b74-a851-14bacead8f1f">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814686" ns14:leistungsReferenz="11814686"
+								   ns14:leistungsStatus="PRODUKTION_BEREIT"
+								   ns14:offerteGueltigBis="2019-09-04T13:48:05.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:18:05.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:18:23.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb3d947225-fc9e-42a2-8ad0-b95c36df56bf">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814663" ns14:leistungsReferenz="11814663"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T13:46:52.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:16:54.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:16:54.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gbadf38274-9ccd-4cab-bf3f-00d6bfdd0268">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814581" ns14:leistungsReferenz="11814581"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T13:42:40.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:12:41.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:12:41.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb28206627-21cb-4ce5-bd83-3cac39903108">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814580" ns14:leistungsReferenz="11814580"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T13:41:24.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:11:25.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:11:25.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb76f8915a-f1e0-44f9-b956-09bab8291116">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011814547" ns14:leistungsReferenz="11814547"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T13:39:08.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T13:09:10.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T13:09:10.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="UNBEKANNT">
+								<vertriebsbase:bezeichnung base:defaultWert="Unbekannt"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gbe9b9560c-e8bb-4a11-92dc-2d62bb2780d4">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011813890" ns14:leistungsReferenz="11813890"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-09-04T11:26:04.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T10:56:05.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T12:04:10.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gbb083c0aa-086f-47bd-a5ac-217a645fd37e">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011813889" ns14:leistungsReferenz="11813889"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T11:25:18.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T10:55:30.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T10:55:30.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb6e2d8393-f84e-4d28-9dc9-1c5bde289e5b">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011813606" ns14:leistungsReferenz="11813606"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T11:07:27.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T10:37:27.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T10:37:27.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gbfe0b4d8f-7d4b-48e3-bd20-173bb2241ef3">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011813605" ns14:leistungsReferenz="11813605"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T11:06:06.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T10:36:10.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T10:36:10.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gbea9b66b4-1489-40bd-a754-caa401ce6fe0">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011813604" ns14:leistungsReferenz="11813604"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-04T11:03:45.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-04T10:34:03.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-04T10:34:03.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-04"
+								   ns14:datenReleaseId="112.20190903-0901.T.T.8836.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-04">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-04T00:00:00.000+02:00"
+															base:bis="2019-10-04T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-04"
+														   vertriebsbase:bis="2019-10-03"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gbb0bfc09c-1d75-4cdf-af21-a3a78e92cb60">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="false"
+								   ns14:leistungsId="15900011809167" ns14:leistungsReferenz="11809167"
+								   ns14:leistungsStatus="VERKAUFT"
+								   ns14:offerteGueltigBis="2019-09-03T18:26:00.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-09-03T17:56:11.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-09-03T17:56:11.000+02:00" ns14:produktNummer="51648"
+								   ns14:generationStichDatum="2019-09-03"
+								   ns14:datenReleaseId="112.20190902-2001.T.T.8829.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-09-03">
+							<ns14:tarifStufe>
+								<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+													  base:en="All Zones" base:fr="Toutes les zones"
+													  base:it="Tutte le zone"/>
+							</ns14:tarifStufe>
+							<ns14:vorverkaufsFrist>
+								<base:wert>2</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-09-03T00:00:00.000+02:00"
+															base:bis="2019-10-03T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-09-03"
+														   vertriebsbase:bis="2019-10-02"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+							<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+								<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+												  base:fr="Adultes" base:it="Adulti"/>
+							</ns14:kundenSegment>
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>1</base:wert>
+									<base:einheit base:code="MONATE">
+										<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+														  base:fr="Mois" base:it="Mesi"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb37a6a0f0-c220-4c68-b8eb-cf72ad43c3fe">
+							<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+								<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+									<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															   base:en="All Zones" base:fr="Toutes les zones"
+															   base:it="Tutte le zone"/>
+								</vertriebsbase:reiseRouteSegment>
+							</ns14:wegAngabe>
+							<ns14:zonenGeltungsBereich>
+								<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+												   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+									<ns14:bezeichnung base:defaultWert="TNW Monatsabo SwissPass"/>
+								</ns14:zonenBuendel>
+							</ns14:zonenGeltungsBereich>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+				<ns14:leistungsSuchErgebnis>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+								   ns14:leistungsId="15900011758058" ns14:leistungsReferenz="11758058"
+								   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+								   ns14:offerteGueltigBis="2019-08-27T12:36:01.000+02:00"
+								   ns14:verkaufsZeitpunkt="2019-08-27T12:06:03.000+02:00"
+								   ns14:erstellungsZeitpunkt="2019-08-27T12:06:03.000+02:00" ns14:produktNummer="6"
+								   ns14:generationStichDatum="2019-08-27"
+								   ns14:datenReleaseId="112.20190826-1002.T.T.8739.0">
+						<ns14:leistungsTyp ns14:code="VERKAUF">
+							<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+											  base:fr="VERKAUF" base:it="VERKAUF"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="BESTEHENDESFOTOVERWENDEN">
+							<ns14:wert>
+								<vertriebsbase:boolean>false</vertriebsbase:boolean>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:verkaufsParameter ns14:code="REISENDER">
+							<ns14:wert>
+								<vertriebsbase:tkid>949e2e6a-fdd1-4f07-8784-201e588ae834</vertriebsbase:tkid>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="0.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="0.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="999" ns14:verkaufsStelle="99998"
+													ns14:vertriebsPunkt="99998" ns14:verkaufsGeraeteId="100">
+							<ns14:verkaufsKanal base:kanalCode="998" base:kanalTyp="BEDIENTER_VERKAUF"
+												base:geschaeftsFeld="B2C"
+												base:bezeichnung="ZPS-intern_BV_Komplettkanal"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2019-08-27">
+							<ns14:vorverkaufsFrist>
+								<base:wert>0</base:wert>
+								<base:einheit base:code="TAGE">
+									<base:bezeichnung base:defaultWert="Kalendertag(e)" base:de="Kalendertag(e)"
+													  base:en="calendar day(s)" base:fr="jour(s) cal."
+													  base:it="giorno/i cal."/>
+								</base:einheit>
+							</ns14:vorverkaufsFrist>
+							<ns14:nutzungsZeitraum>
+								<ns14:tarifierbarerZeitraum base:von="2019-08-27T00:00:00.000+02:00"
+															base:bis="2024-08-27T05:00:00.000+02:00"/>
+								<ns14:ausweisbarerZeitraum vertriebsbase:von="2019-08-27"
+														   vertriebsbase:bis="2024-08-26"/>
+							</ns14:nutzungsZeitraum>
+						</ns14:nutzungsInfo>
+						<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS">
+							<ns14:geltungsDauer>
+								<ns14:nutzungsGeltungsDauer>
+									<base:wert>5</base:wert>
+									<base:einheit base:code="JAHRE">
+										<base:bezeichnung base:defaultWert="Jahre" base:de="Jahre" base:en="Years"
+														  base:fr="Années" base:it="Anni"/>
+									</base:einheit>
+								</ns14:nutzungsGeltungsDauer>
+							</ns14:geltungsDauer>
+						</ns14:produktEinflussFaktoren>
+						<ns14:geltungsBereich ns14:id="gb4331333a-79a1-4614-8afa-5f994245b8b2">
+							<ns14:zonenGeltungsBereich/>
+							<ns14:streckenGeltungsBereich/>
+						</ns14:geltungsBereich>
+					</ns14:leistung>
+				</ns14:leistungsSuchErgebnis>
+			</ns14:leistungsSuchResponse>
+		</ns14:sucheLeistungenResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
