@@ -12,6 +12,8 @@ use OrcaServices\NovaApi\Parser\NovaMessageParser;
 use OrcaServices\NovaApi\Result\NovaPartner;
 use OrcaServices\NovaApi\Result\NovaSearchPartnerResult;
 use OrcaServices\NovaApi\Soap\NovaApiSoapAction;
+use OrcaServices\NovaApi\Soap\NovaParameterMap;
+use OrcaServices\NovaApi\Soap\NovaParameterWriter;
 use OrcaServices\NovaApi\Type\GenderType;
 use OrcaServices\NovaApi\Xml\XmlDocument;
 
@@ -53,15 +55,15 @@ final class NovaSearchPartnerMethod implements NovaMethod
     }
 
     /**
-     * Search a NOVA partner (customer) by TKId (NOVA customer ID).
+     * Search a NOVA partner (customer).
      *
      * https://confluence-ext.sbb.ch/display/NOVAUG/suchePartner
      *
      * @param NovaSearchPartnerParameter $parameter The parameters
      *
+     * @return NovaSearchPartnerResult the partners matching the search parameter
      * @throws Exception if an error occurs
      *
-     * @return NovaSearchPartnerResult the authentication The authentication token returned by the login call
      */
     public function searchPartner(NovaSearchPartnerParameter $parameter): NovaSearchPartnerResult
     {
@@ -119,23 +121,21 @@ final class NovaSearchPartnerMethod implements NovaMethod
         $partnerSearchParameter = $dom->createElement('novagp:partnerSuchParameter');
         $method->appendChild($partnerSearchParameter);
 
-        if ($parameter->tkId) {
-            $tkidElement = $dom->createElement('novagp:tkid');
-            $partnerSearchParameter->appendChild($tkidElement);
-            $tkidElement->appendChild($dom->createTextNode($parameter->tkId));
-        }
+        $parameterWriter = new NovaParameterWriter($dom, $partnerSearchParameter);
 
-        if ($parameter->cardNumber) {
-            $cardNumberElement = $dom->createElement('novagp:grundkartenNummer');
-            $partnerSearchParameter->appendChild($cardNumberElement);
-            $cardNumberElement->appendChild($dom->createTextNode($parameter->cardNumber));
-        }
-
-        if ($parameter->ckm) {
-            $ckmElement = $dom->createElement('novagp:ckm');
-            $partnerSearchParameter->appendChild($ckmElement);
-            $ckmElement->appendChild($dom->createTextNode($parameter->ckm));
-        }
+        $parameterWriter->appendToDocument(new NovaParameterMap([
+            'tkid' => $parameter->tkId,
+            'grundkartenNummer' => $parameter->cardNumber,
+            'ckm' => $parameter->ckm,
+            'name' => $parameter->lastName,
+            'vorname' => $parameter->firstName,
+            'mail' => $parameter->mail,
+            'land' => $parameter->country,
+            'ort' => $parameter->city,
+            'plz' => $parameter->postalCode,
+            'strasseHnr' => $parameter->street,
+            'geburtsDatum' => $parameter->dateOfBirth ? $parameter->dateOfBirth->format('Y-m-d') : null,
+        ]));
 
         $pagingElement = $dom->createElement('novagp:pagingParameter');
         $partnerSearchParameter->appendChild($pagingElement);

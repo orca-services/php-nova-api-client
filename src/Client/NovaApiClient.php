@@ -9,6 +9,7 @@ use OrcaServices\NovaApi\Method\NovaCreateReceiptsMethod;
 use OrcaServices\NovaApi\Method\NovaCreateServicesMethod;
 use OrcaServices\NovaApi\Method\NovaPurchaseServicesMethod;
 use OrcaServices\NovaApi\Method\NovaSearchPartnerMethod;
+use OrcaServices\NovaApi\Method\NovaSearchServicesMethod;
 use OrcaServices\NovaApi\Parameter\NovaCheckSwissPassValidityParameter;
 use OrcaServices\NovaApi\Parameter\NovaConfirmReceiptsParameter;
 use OrcaServices\NovaApi\Parameter\NovaCreateOffersParameter;
@@ -16,6 +17,7 @@ use OrcaServices\NovaApi\Parameter\NovaCreateReceiptsParameter;
 use OrcaServices\NovaApi\Parameter\NovaCreateServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaPurchaseServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchPartnerParameter;
+use OrcaServices\NovaApi\Parameter\NovaSearchServicesParameter;
 use OrcaServices\NovaApi\Result\NovaCheckSwissPassValidityResult;
 use OrcaServices\NovaApi\Result\NovaConfirmReceiptsResult;
 use OrcaServices\NovaApi\Result\NovaCreateOffersResult;
@@ -23,12 +25,18 @@ use OrcaServices\NovaApi\Result\NovaCreateReceiptsResult;
 use OrcaServices\NovaApi\Result\NovaCreateServicesResult;
 use OrcaServices\NovaApi\Result\NovaPurchaseServicesResult;
 use OrcaServices\NovaApi\Result\NovaSearchPartnerResult;
+use OrcaServices\NovaApi\Result\NovaSearchServicesResult;
 
 /**
  * NOVA API client.
  */
 final class NovaApiClient
 {
+    /**
+     * @var NovaSearchServicesMethod
+     */
+    private $novaSearchServicesMethod;
+
     /**
      * @var NovaSearchPartnerMethod
      */
@@ -74,6 +82,7 @@ final class NovaApiClient
      * @param NovaPurchaseServicesMethod $novaPurchaseServicesMethod The method
      * @param NovaCreateReceiptsMethod $novaCreateReceiptsMethod The method
      * @param NovaConfirmReceiptsMethod $novaConfirmReceiptsMethod The method
+     * @param NovaSearchServicesMethod $novaSearchServicesMethod The method
      */
     public function __construct(
         NovaSearchPartnerMethod $novaSearchPartnerMethod,
@@ -82,7 +91,8 @@ final class NovaApiClient
         NovaCreateServicesMethod $novaCreateServicesMethod,
         NovaPurchaseServicesMethod $novaPurchaseServicesMethod,
         NovaCreateReceiptsMethod $novaCreateReceiptsMethod,
-        NovaConfirmReceiptsMethod $novaConfirmReceiptsMethod
+        NovaConfirmReceiptsMethod $novaConfirmReceiptsMethod,
+        NovaSearchServicesMethod $novaSearchServicesMethod
     ) {
         $this->novaSearchPartnerMethod = $novaSearchPartnerMethod;
         $this->checkSwissPassValidityMethod = $checkSwissPassValidityMethod;
@@ -91,6 +101,7 @@ final class NovaApiClient
         $this->novaPurchaseServicesMethod = $novaPurchaseServicesMethod;
         $this->novaCreateReceiptsMethod = $novaCreateReceiptsMethod;
         $this->novaConfirmReceiptsMethod = $novaConfirmReceiptsMethod;
+        $this->novaSearchServicesMethod = $novaSearchServicesMethod;
     }
 
     /**
@@ -176,5 +187,17 @@ final class NovaApiClient
     public function confirmReceipt(NovaConfirmReceiptsParameter $parameter): NovaConfirmReceiptsResult
     {
         return $this->novaConfirmReceiptsMethod->confirmReceipts($parameter);
+    }
+
+    /**
+     * Search services.
+     *
+     * @param NovaSearchServicesParameter $parameter The search parameters
+     *
+     * @return NovaSearchServicesResult The search result
+     */
+    public function searchServices(NovaSearchServicesParameter $parameter): NovaSearchServicesResult
+    {
+        return $this->novaSearchServicesMethod->searchServices($parameter);
     }
 }

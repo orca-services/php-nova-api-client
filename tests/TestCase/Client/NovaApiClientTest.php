@@ -16,6 +16,7 @@ use OrcaServices\NovaApi\Parameter\NovaCreateServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaIdentifierParameter;
 use OrcaServices\NovaApi\Parameter\NovaPurchaseServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchPartnerParameter;
+use OrcaServices\NovaApi\Parameter\NovaSearchServicesParameter;
 use OrcaServices\NovaApi\Test\Traits\UnitTestTrait;
 use OrcaServices\NovaApi\Type\GenderType;
 use PHPUnit\Framework\TestCase;
@@ -34,12 +35,16 @@ class NovaApiClientTest extends TestCase
      *
      * @return NovaApiClient The instance
      */
-    protected function createNovaApiClient(array $responses): NovaApiClient
+    private function createNovaApiClient(array $responses): NovaApiClient
     {
         Chronos::setTestNow('2019-09-01 00:00:00');
 
+        $settings = $this->getSettings();
+
         // To make real http calls, just comment out this line
-        $this->mockNovaGuzzleClient($responses);
+        $settings = $this->mockNovaGuzzleClient($responses, $settings);
+
+        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
 
         return $this->getContainer()->get(NovaApiClient::class);
     }
@@ -48,10 +53,11 @@ class NovaApiClientTest extends TestCase
      * Mock NOVA Guzzle client and single sign on (SSO).
      *
      * @param array $responses The mocked responses
+     * @param array $settings The nova api settings
      *
-     * @return void
+     * @return array
      */
-    protected function mockNovaGuzzleClient(array $responses)
+    private function mockNovaGuzzleClient(array $responses, array $settings): array
     {
         // Append the login as first response
         $loginResponse = new Response();
@@ -61,40 +67,23 @@ class NovaApiClientTest extends TestCase
 
         array_unshift($responses, $loginResponse);
 
-        $settings = [
-            // NOVA API version
-            'version' => 'v14',
-            // Default HTTP settings for SSO and the webservice
-            'default' => [
-                'debug' => false,
-                'base_uri' => null,
-                // Should be disabled
-                'cookies' => false,
-                // Accept all SSL certificates (important),
-                // because NOVA regularly changes its SSL root certificates,
-                // and we don't know when that will happen.
-                'verify' => false,
-                'headers' => [
-                    'Content-Type' => 'text/xml;charset=UTF-8',
-                    'User-Agent' => 'NovaApiClient/1.0',
-                ],
-                'timeout' => 30,
-                'connect_timeout' => 30,
-                'handler' => HandlerStack::create(new MockHandler($responses)),
-            ],
-            // Single Sign On
-            'sso' => [
-                'base_uri' => 'http://localhost',
-                'client_id' => '',
-                'client_secret' => '',
-            ],
-            // The NOVA SOAP endpoint
-            'webservice' => [
-                'base_uri' => 'http://localhost',
-            ],
-        ];
+        $settings['default']['handler'] = HandlerStack::create(new MockHandler($responses));
 
-        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
+        return $settings;
+    }
+
+    /**
+     * Returns the default settings
+     *
+     * @return array
+     */
+    private function getSettings(): array
+    {
+        $filename = file_exists(__DIR__ . '/../../config.php')
+            ? '/../../config.php'
+            : '/../../config.php.dist';
+
+        return include __DIR__ . $filename;
     }
 
     /**
@@ -179,6 +168,45 @@ class NovaApiClientTest extends TestCase
         $parameter = new NovaSearchPartnerParameter();
         $this->setTestIdentifier($parameter);
         $parameter->cardNumber = 'DAW856';
+
+        $actual = $client->searchPartner($parameter);
+
+        static::assertEmpty($actual->messages);
+        static::assertNotEmpty($actual->partners);
+        static::assertCount(1, $actual->partners);
+
+        $partner = $actual->partners[0];
+
+        static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
+        static::assertSame('164-937-314-5', $partner->ckm);
+        static::assertSame('DAW856', $partner->cardNumber);
+    }
+
+    /**
+     * Test.
+     *
+     * @return void
+     */
+    public function testSearchPartnerByPassengerInformation()
+    {
+        // Create a mocked response queue
+        $response = new Response();
+        $response->getBody()->write(
+            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchPartnerResponse.xml')
+        );
+
+        $client = $this->createNovaApiClient([$response]);
+
+        $parameter = new NovaSearchPartnerParameter();
+        $this->setTestIdentifier($parameter);
+        $parameter->firstName = 'Mustermann';
+        $parameter->lastName = 'Max';
+        $parameter->mail = 'max.mustermann@example.com';
+        $parameter->country = 'CH';
+        $parameter->city = 'Pratteln';
+        $parameter->postalCode = '4133';
+        $parameter->street = 'Bahnhofstrasse 1';
+        $parameter->dateOfBirth = Chronos::parse('1982-03-28');
 
         $actual = $client->searchPartner($parameter);
 
@@ -493,5 +521,35 @@ class NovaApiClientTest extends TestCase
         );
 
         static::assertEmpty($actual->messages);
+    }
+
+    /**
+     * Test.
+     *
+     * @return void
+     */
+    public function testSearchServicesByTkId()
+    {
+        // Create a mocked response queue
+        $response = new Response();
+        $response->getBody()->write(
+            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchServicesResponse.xml')
+        );
+
+        $client = $this->createNovaApiClient([$response]);
+
+        $parameter = new NovaSearchServicesParameter();
+        $this->setTestIdentifier($parameter);
+        $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
+
+        $actual = $client->searchServices($parameter);
+
+        $this->assertCount(19, $actual->services);
+        $this->assertEquals('949e2e6a-fdd1-4f07-8784-201e588ae834', $actual->services[0]->tkId);
+        $this->assertEquals('2019-09-01 00:00:00', $actual->services[0]->validFrom->toDateTimeString());
+        $this->assertEquals('2019-10-01 05:00:00', $actual->services[0]->validTo->toDateTimeString());
+        $this->assertEquals('51648', $actual->services[0]->productNumber);
+        $this->assertEquals(['100', '123'], $actual->services[0]->zones);
+        $this->assertEquals([], $actual->services[1]->zones);
     }
 }
