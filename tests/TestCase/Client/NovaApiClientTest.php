@@ -79,9 +79,9 @@ class NovaApiClientTest extends TestCase
      */
     protected function getSettings(): array
     {
-        $filename = file_exists(__DIR__ . '/../../../config.php')
-            ? '/../../../config.php'
-            : '/../../../config.php.dist';
+        $filename = file_exists(__DIR__ . '/../../config.php')
+            ? '/../../config.php'
+            : '/../../config.php.dist';
 
         return include __DIR__ . $filename;
     }

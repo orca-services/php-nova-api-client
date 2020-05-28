@@ -8,4 +8,4 @@ cache.properties
 .phpunit.result.cache
 vendor/
 build/
-config.php
+tests/config.php
