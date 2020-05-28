@@ -9,18 +9,18 @@ final class NovaSearchServicesResult
     /**
      * Services
      *
-     * @var NovaService[]
+     * @var NovaServiceResult[]
      */
     public $services = [];
 
     /**
      * Add service.
      *
-     * @param NovaService $service The nova service
+     * @param NovaServiceResult $service The nova service
      *
      * @return void
      */
-    public function addService(NovaService $service)
+    public function addService(NovaServiceResult $service)
     {
         $this->services[] = $service;
     }

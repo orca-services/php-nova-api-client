@@ -9,7 +9,7 @@ use OrcaServices\NovaApi\Parameter\NovaSearchServicesParameter;
 use OrcaServices\NovaApi\Parser\NovaApiErrorParser;
 use OrcaServices\NovaApi\Parser\NovaMessageParser;
 use OrcaServices\NovaApi\Result\NovaSearchServicesResult;
-use OrcaServices\NovaApi\Result\NovaService;
+use OrcaServices\NovaApi\Result\NovaServiceResult;
 use OrcaServices\NovaApi\Soap\NovaApiSoapAction;
 use OrcaServices\NovaApi\Xml\XmlDocument;
 
@@ -161,11 +161,11 @@ final class NovaSearchServicesMethod implements NovaMethod
      * @param DOMElement $serviceNode The partnerNode
      * @param XmlDocument $xml The xml document
      *
-     * @return NovaService The new NovaService instance
+     * @return NovaServiceResult The new NovaService instance
      */
-    private function createService(DOMElement $serviceNode, XmlDocument $xml): NovaService
+    private function createService(DOMElement $serviceNode, XmlDocument $xml): NovaServiceResult
     {
-        $service = new NovaService();
+        $service = new NovaServiceResult();
 
         $service->tkId = $xml->findNodeValue('verkaufsParameter/wert/tkid', $serviceNode);
         $service->validFrom = $xml->createChronosFromXsDateTime(

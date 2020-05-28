@@ -4,7 +4,7 @@ namespace OrcaServices\NovaApi\Result;
 
 use Cake\Chronos\Chronos;
 
-final class NovaService
+final class NovaServiceResult
 {
     /**
      * Tkid
