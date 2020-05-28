@@ -178,7 +178,7 @@ final class NovaSearchServicesMethod implements NovaMethod
         $service->productNumber = $xml->findAttributeValue('@produktNummer', $serviceNode);
 
         foreach ($xml->queryNodes('geltungsBereich/zonenGeltungsBereich/zonenBuendel/zonen', $serviceNode) as $zone) {
-            $service->zones[] = $xml->findNodeValue('code', $zone);
+            $service->addZone($xml->findNodeValue('code', $zone));
         }
 
         return $service;
