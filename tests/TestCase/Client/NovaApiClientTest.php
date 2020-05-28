@@ -35,7 +35,7 @@ class NovaApiClientTest extends TestCase
      *
      * @return NovaApiClient The instance
      */
-    protected function createNovaApiClient(array $responses): NovaApiClient
+    private function createNovaApiClient(array $responses): NovaApiClient
     {
         Chronos::setTestNow('2019-09-01 00:00:00');
 
@@ -57,7 +57,7 @@ class NovaApiClientTest extends TestCase
      *
      * @return array
      */
-    protected function mockNovaGuzzleClient(array $responses, array $settings): array
+    private function mockNovaGuzzleClient(array $responses, array $settings): array
     {
         // Append the login as first response
         $loginResponse = new Response();
@@ -77,7 +77,7 @@ class NovaApiClientTest extends TestCase
      *
      * @return array
      */
-    protected function getSettings(): array
+    private function getSettings(): array
     {
         $filename = file_exists(__DIR__ . '/../../config.php')
             ? '/../../config.php'
