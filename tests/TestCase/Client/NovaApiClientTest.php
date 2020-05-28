@@ -42,7 +42,7 @@ class NovaApiClientTest extends TestCase
         $settings = $this->getSettings();
 
         // To make real http calls, just comment out this line
-        $settings = $this->mockNovaGuzzleClient($responses, $settings);
+        $settings = $this->mockNovaGuzzleClient($settings, $responses);
 
         $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
 
@@ -52,12 +52,12 @@ class NovaApiClientTest extends TestCase
     /**
      * Mock NOVA Guzzle client and single sign on (SSO).
      *
-     * @param array $responses The mocked responses
      * @param array $settings The nova api settings
+     * @param array $responses The mocked responses
      *
      * @return array
      */
-    private function mockNovaGuzzleClient(array $responses, array $settings): array
+    private function mockNovaGuzzleClient(array $settings, array $responses): array
     {
         // Append the login as first response
         $loginResponse = new Response();

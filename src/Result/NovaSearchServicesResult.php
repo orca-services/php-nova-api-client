@@ -2,6 +2,9 @@
 
 namespace OrcaServices\NovaApi\Result;
 
+/**
+ * NovaSearchServicesResult
+ */
 final class NovaSearchServicesResult
 {
     use NovaMessageTrait;

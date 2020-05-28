@@ -2,6 +2,9 @@
 
 namespace OrcaServices\NovaApi\Parameter;
 
+/**
+ * NovaSearchServicesParameter
+ */
 class NovaSearchServicesParameter extends NovaIdentifierParameter
 {
     /**

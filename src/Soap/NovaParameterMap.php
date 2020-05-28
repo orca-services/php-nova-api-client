@@ -2,6 +2,9 @@
 
 namespace OrcaServices\NovaApi\Soap;
 
+/**
+ * NovaParameterMap
+ */
 class NovaParameterMap
 {
     /**

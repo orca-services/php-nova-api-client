@@ -5,6 +5,9 @@ namespace OrcaServices\NovaApi\Soap;
 use DOMDocument;
 use DOMElement;
 
+/**
+ * NovaParameterWriter
+ */
 class NovaParameterWriter
 {
     /**
