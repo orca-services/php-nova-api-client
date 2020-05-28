@@ -35,7 +35,7 @@ final class NovaApiClient
     /**
      * @var NovaSearchServicesMethod
      */
-    protected $novaSearchServicesMethod;
+    private $novaSearchServicesMethod;
 
     /**
      * @var NovaSearchPartnerMethod
