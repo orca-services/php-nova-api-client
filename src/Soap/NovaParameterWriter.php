@@ -6,7 +6,7 @@ use DOMDocument;
 use DOMElement;
 
 /**
- * NovaParameterWriter
+ * NovaParameterWriter.
  */
 class NovaParameterWriter
 {

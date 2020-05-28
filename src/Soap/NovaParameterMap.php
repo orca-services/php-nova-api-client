@@ -3,7 +3,7 @@
 namespace OrcaServices\NovaApi\Soap;
 
 /**
- * NovaParameterMap
+ * NovaParameterMap.
  */
 class NovaParameterMap
 {

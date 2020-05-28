@@ -3,7 +3,7 @@
 namespace OrcaServices\NovaApi\Result;
 
 /**
- * NovaSearchServicesResult
+ * NovaSearchServicesResult.
  */
 final class NovaSearchServicesResult
 {
