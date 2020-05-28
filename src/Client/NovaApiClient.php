@@ -190,11 +190,11 @@ final class NovaApiClient
     }
 
     /**
-     * Search partner (customers).
+     * Search services.
      *
-     * @param NovaSearchPartnerParameter $parameter The search parameters
+     * @param NovaSearchServicesParameter $parameter The search parameters
      *
-     * @return NovaSearchPartnerResult The search result
+     * @return NovaSearchServicesResult The search result
      */
     public function searchServices(NovaSearchServicesParameter $parameter): NovaSearchServicesResult
     {
