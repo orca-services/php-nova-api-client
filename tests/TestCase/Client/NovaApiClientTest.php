@@ -511,6 +511,6 @@ class NovaApiClientTest extends TestCase
         $this->assertEquals('2019-10-01 05:00:00', $actual->services[0]->validTo->toDateTimeString());
         $this->assertEquals('51648', $actual->services[0]->productNumber);
         $this->assertEquals(['100', '123'], $actual->services[0]->zones);
-        $this->assertEquals(['all'], $actual->services[1]->zones);
+        $this->assertEquals([], $actual->services[1]->zones);
     }
 }
