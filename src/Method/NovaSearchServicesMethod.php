@@ -64,7 +64,6 @@ final class NovaSearchServicesMethod implements NovaMethod
     public function searchServices(NovaSearchServicesParameter $parameter): NovaSearchServicesResult
     {
         // The SOAP endpoint url
-        // https://echo-api.3scale.net/novagp/geschaeftspartner/public/MAJOR.MINOR/GeschaeftspartnerService
         $url = $this->novaSoapAction->getNovaSalesServiceUrl();
 
         // The SOAP action (http header)
