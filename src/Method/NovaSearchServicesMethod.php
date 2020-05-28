@@ -167,18 +167,18 @@ final class NovaSearchServicesMethod implements NovaMethod
     {
         $service = new NovaServiceResult();
 
-        $service->tkId = $xml->findNodeValue('verkaufsParameter/wert/tkid', $serviceNode);
+        $service->tkId = $xml->getNodeValue('verkaufsParameter/wert/tkid', $serviceNode);
         $service->validFrom = $xml->createChronosFromXsDateTime(
-            $xml->findAttributeValue('nutzungsInfo/nutzungsZeitraum/tarifierbarerZeitraum/@von', $serviceNode)
+            $xml->getAttributeValue('nutzungsInfo/nutzungsZeitraum/tarifierbarerZeitraum/@von', $serviceNode)
         );
         $service->validTo = $xml->createChronosFromXsDateTime(
-            $xml->findAttributeValue('nutzungsInfo/nutzungsZeitraum/tarifierbarerZeitraum/@bis', $serviceNode)
+            $xml->getAttributeValue('nutzungsInfo/nutzungsZeitraum/tarifierbarerZeitraum/@bis', $serviceNode)
         );
 
-        $service->productNumber = $xml->findAttributeValue('@produktNummer', $serviceNode);
+        $service->productNumber = $xml->getAttributeValue('@produktNummer', $serviceNode);
 
         foreach ($xml->queryNodes('geltungsBereich/zonenGeltungsBereich/zonenBuendel/zonen', $serviceNode) as $zone) {
-            $service->addZone($xml->findNodeValue('code', $zone));
+            $service->addZone($xml->getNodeValue('code', $zone));
         }
 
         return $service;
