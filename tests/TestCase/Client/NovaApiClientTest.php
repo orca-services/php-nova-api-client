@@ -185,6 +185,45 @@ class NovaApiClientTest extends TestCase
     /**
      * Test.
      *
+     * @return void
+     */
+    public function testSearchPartnerByPassengerInformation()
+    {
+        // Create a mocked response queue
+        $response = new Response();
+        $response->getBody()->write(
+            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchPartnerResponse.xml')
+        );
+
+        $client = $this->createNovaApiClient([$response]);
+
+        $parameter = new NovaSearchPartnerParameter();
+        $this->setTestIdentifier($parameter);
+        $parameter->firstName = 'Mustermann';
+        $parameter->lastName = 'Max';
+        $parameter->mail = 'max.mustermann@example.com';
+        $parameter->country = 'CH';
+        $parameter->city = 'Pratteln';
+        $parameter->postalCode = '4133';
+        $parameter->street = 'Bahnhofstrasse 1';
+        $parameter->dateOfBirth = Chronos::parse('1982-03-28');
+
+        $actual = $client->searchPartner($parameter);
+
+        static::assertEmpty($actual->messages);
+        static::assertNotEmpty($actual->partners);
+        static::assertCount(1, $actual->partners);
+
+        $partner = $actual->partners[0];
+
+        static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
+        static::assertSame('164-937-314-5', $partner->ckm);
+        static::assertSame('DAW856', $partner->cardNumber);
+    }
+
+    /**
+     * Test.
+     *
      * @dataProvider checkSwissPassValidityProvider
      *
      * @param string $tkId The tkId
