@@ -4,6 +4,9 @@ namespace OrcaServices\NovaApi\Result;
 
 use Cake\Chronos\Chronos;
 
+/**
+ * NovaServiceResult
+ */
 final class NovaServiceResult
 {
     /**
