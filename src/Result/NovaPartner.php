@@ -10,7 +10,7 @@ use Cake\Chronos\Chronos;
 final class NovaPartner
 {
     /**
-     * @var string|null Value
+     * @var string Value
      */
     public $tkId;
 
