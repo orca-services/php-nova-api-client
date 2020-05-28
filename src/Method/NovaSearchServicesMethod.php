@@ -114,9 +114,24 @@ final class NovaSearchServicesMethod implements NovaMethod
         $this->novaSoapAction->appendDomCorrelationContext($dom, $searchQuery, $parameter, '');
 
         $service = $dom->createElement('leistung');
+
         $tkid = $dom->createElement('tkid');
         $tkid->appendChild($dom->createTextNode($parameter->tkId));
         $service->appendChild($tkid);
+
+        if ($parameter->periodOfUseStart || $parameter->periodOfUseEnd) {
+            $periodOfUse = $dom->createElement('nutzungsZeitraum');
+            $service->appendChild($periodOfUse);
+        }
+
+        if ($parameter->periodOfUseStart && isset($periodOfUse)) {
+            $periodOfUse->setAttribute('base:von', $parameter->periodOfUseStart->format('Y-m-d'));
+        }
+
+        if ($parameter->periodOfUseEnd && isset($periodOfUse)) {
+            $periodOfUse->setAttribute('base:bis', $parameter->periodOfUseEnd->format('Y-m-d'));
+        }
+
         $searchQuery->appendChild($service);
         $method->appendChild($searchQuery);
 
