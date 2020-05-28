@@ -8,21 +8,21 @@ use DOMElement;
 class NovaParameterWriter
 {
     /**
-     * Dom document
+     * Dom document.
      *
      * @var DOMDocument
      */
     private $document;
 
     /**
-     * Parent element
+     * Parent element.
      *
      * @var DOMElement
      */
     private $parent;
 
     /**
-     * Parameter prefix
+     * Parameter prefix.
      *
      * @var string
      */
@@ -46,6 +46,7 @@ class NovaParameterWriter
      * Appends the given parameters to the document inside the parent element.
      *
      * @param NovaParameterMap $parameterMap Parameter map
+     *
      * @return void
      */
     public function appendToDocument(NovaParameterMap $parameterMap)

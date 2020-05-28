@@ -61,9 +61,9 @@ final class NovaSearchPartnerMethod implements NovaMethod
      *
      * @param NovaSearchPartnerParameter $parameter The parameters
      *
-     * @return NovaSearchPartnerResult the partners matching the search parameter
-     * @throws Exception if an error occurs
+     * @throws Exception
      *
+     * @return NovaSearchPartnerResult The partners matching the search parameter
      */
     public function searchPartner(NovaSearchPartnerParameter $parameter): NovaSearchPartnerResult
     {

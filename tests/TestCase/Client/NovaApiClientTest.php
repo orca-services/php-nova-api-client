@@ -73,7 +73,7 @@ class NovaApiClientTest extends TestCase
     }
 
     /**
-     * Returns the default settings
+     * Returns the default settings.
      *
      * @return array
      */

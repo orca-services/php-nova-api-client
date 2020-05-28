@@ -7,35 +7,35 @@ use Cake\Chronos\Chronos;
 final class NovaServiceResult
 {
     /**
-     * Tkid
+     * Tkid.
      *
      * @var string
      */
     public $tkId;
 
     /**
-     * Valid start date
+     * Valid start date.
      *
      * @var Chronos
      */
     public $validFrom;
 
     /**
-     * Valid end date
+     * Valid end date.
      *
      * @var Chronos
      */
     public $validTo;
 
     /**
-     * Product number
+     * Product number.
      *
      * @var string
      */
     public $productNumber;
 
     /**
-     * Restricted to zones
+     * Restricted to zones.
      *
      * @var string[]
      */

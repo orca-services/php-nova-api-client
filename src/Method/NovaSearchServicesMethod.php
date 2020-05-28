@@ -57,9 +57,9 @@ final class NovaSearchServicesMethod implements NovaMethod
      *
      * @param NovaSearchServicesParameter $parameter The parameters
      *
-     * @return NovaSearchServicesResult the services matching the search parameter
-     * @throws Exception if an error occurs
+     * @throws Exception
      *
+     * @return NovaSearchServicesResult The services matching the search parameter
      */
     public function searchServices(NovaSearchServicesParameter $parameter): NovaSearchServicesResult
     {

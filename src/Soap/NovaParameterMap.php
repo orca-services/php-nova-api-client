@@ -5,7 +5,7 @@ namespace OrcaServices\NovaApi\Soap;
 class NovaParameterMap
 {
     /**
-     * Parameter map
+     * Parameter map.
      *
      * @var array
      */

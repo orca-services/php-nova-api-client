@@ -31,56 +31,56 @@ final class NovaSearchPartnerParameter extends NovaIdentifierParameter
     public $ckm;
 
     /**
-     * Customer last name
+     * Customer last name.
      *
      * @var string|null
      */
     public $lastName;
 
     /**
-     * Customer first name
+     * Customer first name.
      *
      * @var string|null
      */
     public $firstName;
 
     /**
-     * Customer e-mail address
+     * Customer e-mail address.
      *
      * @var string|null
      */
     public $mail;
 
     /**
-     * Customer country
+     * Customer country.
      *
      * @var string|null
      */
     public $country;
 
     /**
-     * Customer city
+     * Customer city.
      *
      * @var string|null
      */
     public $city;
 
     /**
-     * Customer postal code
+     * Customer postal code.
      *
      * @var string|null
      */
     public $postalCode;
 
     /**
-     * Customer street and number
+     * Customer street and number.
      *
      * @var string|null
      */
     public $street;
 
     /**
-     * Customer date of birth
+     * Customer date of birth.
      *
      * @var Chronos|null
      */

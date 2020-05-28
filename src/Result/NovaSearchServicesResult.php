@@ -7,7 +7,7 @@ final class NovaSearchServicesResult
     use NovaMessageTrait;
 
     /**
-     * Services
+     * Services.
      *
      * @var NovaServiceResult[]
      */
