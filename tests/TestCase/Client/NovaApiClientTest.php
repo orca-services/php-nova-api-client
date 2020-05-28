@@ -541,6 +541,8 @@ class NovaApiClientTest extends TestCase
         $parameter = new NovaSearchServicesParameter();
         $this->setTestIdentifier($parameter);
         $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
+        $parameter->periodOfUseStart = Chronos::now()->subDays(1);
+        $parameter->periodOfUseEnd = Chronos::now()->addDay();
 
         $actual = $client->searchServices($parameter);
 
