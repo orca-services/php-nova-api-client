@@ -42,7 +42,7 @@ final class NovaServiceResult
      *
      * @var string[]
      */
-    public $zones = [];
+    private $zones = [];
 
     /**
      * Add zones.
@@ -54,5 +54,15 @@ final class NovaServiceResult
     public function addZone(string $zone)
     {
         $this->zones[] = $zone;
+    }
+
+    /**
+     * Get a list of zones.
+     *
+     * @return string[] List of zones
+     */
+    public function getZones(): array
+    {
+        return $this->zones;
     }
 }

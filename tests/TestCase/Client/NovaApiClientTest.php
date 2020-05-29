@@ -125,10 +125,10 @@ class NovaApiClientTest extends TestCase
         $actual = $client->searchPartner($parameter);
 
         static::assertEmpty($actual->messages);
-        static::assertNotEmpty($actual->partners);
-        static::assertCount(1, $actual->partners);
+        static::assertNotEmpty($actual->getPartners());
+        static::assertCount(1, $actual->getPartners());
 
-        $partner = $actual->partners[0];
+        $partner = $actual->getPartners()[0];
 
         static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
         static::assertSame('164-937-314-5', $partner->ckm);
@@ -172,10 +172,10 @@ class NovaApiClientTest extends TestCase
         $actual = $client->searchPartner($parameter);
 
         static::assertEmpty($actual->messages);
-        static::assertNotEmpty($actual->partners);
-        static::assertCount(1, $actual->partners);
+        static::assertNotEmpty($actual->getPartners());
+        static::assertCount(1, $actual->getPartners());
 
-        $partner = $actual->partners[0];
+        $partner = $actual->getPartners()[0];
 
         static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
         static::assertSame('164-937-314-5', $partner->ckm);
@@ -211,10 +211,10 @@ class NovaApiClientTest extends TestCase
         $actual = $client->searchPartner($parameter);
 
         static::assertEmpty($actual->messages);
-        static::assertNotEmpty($actual->partners);
-        static::assertCount(1, $actual->partners);
+        static::assertNotEmpty($actual->getPartners());
+        static::assertCount(1, $actual->getPartners());
 
-        $partner = $actual->partners[0];
+        $partner = $actual->getPartners()[0];
 
         static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
         static::assertSame('164-937-314-5', $partner->ckm);
@@ -314,9 +314,9 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->createOffers($parameter);
 
-        static::assertCount(1, $actual->offers);
+        static::assertCount(1, $actual->getOffers());
 
-        $offer = $actual->offers[0];
+        $offer = $actual->getOffers()[0];
 
         static::assertSame('_5c63dc7d-62e5-4f3a-a761-464488e92000', $offer->novaOfferId);
         static::assertSame('105.00', $offer->price);
@@ -551,7 +551,7 @@ class NovaApiClientTest extends TestCase
         $this->assertEquals('2019-09-01 00:00:00', $actual->getServices()[0]->validFrom->toDateTimeString());
         $this->assertEquals('2019-10-01 05:00:00', $actual->getServices()[0]->validTo->toDateTimeString());
         $this->assertEquals('51648', $actual->getServices()[0]->productNumber);
-        $this->assertEquals(['100', '123'], $actual->getServices()[0]->zones);
-        $this->assertEquals([], $actual->getServices()[1]->zones);
+        $this->assertEquals(['100', '123'], $actual->getServices()[0]->getZones());
+        $this->assertEquals([], $actual->getServices()[1]->getZones());
     }
 }

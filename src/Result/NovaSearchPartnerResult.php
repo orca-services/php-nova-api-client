@@ -14,7 +14,7 @@ final class NovaSearchPartnerResult
      *
      * @var NovaPartner[]
      */
-    public $partners = [];
+    private $partners = [];
 
     /**
      * Add partner.
@@ -26,5 +26,15 @@ final class NovaSearchPartnerResult
     public function addPartner(NovaPartner $novaPartner)
     {
         $this->partners[] = $novaPartner;
+    }
+
+    /**
+     * Get list of partners.
+     *
+     * @return NovaPartner[] The list of partners
+     */
+    public function getPartners()
+    {
+        return $this->partners;
     }
 }

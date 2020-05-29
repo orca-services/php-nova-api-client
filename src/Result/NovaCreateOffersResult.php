@@ -14,7 +14,7 @@ final class NovaCreateOffersResult
      *
      * @var NovaOffer[]
      */
-    public $offers = [];
+    private $offers = [];
 
     /**
      * Set value.
@@ -26,5 +26,15 @@ final class NovaCreateOffersResult
     public function addOffer(NovaOffer $offer)
     {
         $this->offers[] = $offer;
+    }
+
+    /**
+     * Get a list of offers.
+     *
+     * @return array|NovaOffer[] The offers
+     */
+    public function getOffers(): array
+    {
+        return $this->offers;
     }
 }
