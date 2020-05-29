@@ -14,7 +14,7 @@ final class NovaSearchServicesResult
      *
      * @var NovaServiceResult[]
      */
-    public $services = [];
+    private $services = [];
 
     /**
      * Add service.
@@ -26,5 +26,15 @@ final class NovaSearchServicesResult
     public function addService(NovaServiceResult $service)
     {
         $this->services[] = $service;
+    }
+
+    /**
+     * Get services.
+     *
+     * @return array|NovaServiceResult[] The items
+     */
+    public function getServices(): array
+    {
+        return $this->services;
     }
 }

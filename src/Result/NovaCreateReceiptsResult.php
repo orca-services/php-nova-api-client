@@ -14,7 +14,7 @@ final class NovaCreateReceiptsResult
      *
      * @var NovaServiceItem[]
      */
-    public $services = [];
+    private $services = [];
 
     /**
      * Add service.
@@ -26,5 +26,15 @@ final class NovaCreateReceiptsResult
     public function addService(NovaServiceItem $novaService)
     {
         $this->services[] = $novaService;
+    }
+
+    /**
+     * Get services.
+     *
+     * @return array|NovaServiceItem[] The items
+     */
+    public function getServices(): array
+    {
+        return $this->services;
     }
 }

@@ -365,10 +365,10 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->createService($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('OFFERIERT', $actual->services[0]->serviceStatus);
+        static::assertCount(1, $actual->getServices());
+        static::assertSame('OFFERIERT', $actual->getServices()[0]->serviceStatus);
 
-        $service = (array)$actual->services[0];
+        $service = (array)$actual->getServices()[0];
 
         static::assertSame(
             [
@@ -412,10 +412,10 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->purchaseService($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('VERKAUFT', $actual->services[0]->serviceStatus);
+        static::assertCount(1, $actual->getServices());
+        static::assertSame('VERKAUFT', $actual->getServices()[0]->serviceStatus);
 
-        $service = (array)$actual->services[0];
+        $service = (array)$actual->getServices()[0];
 
         static::assertSame(
             [
@@ -456,10 +456,10 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->createReceipt($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('PRODUKTION_BEREIT', $actual->services[0]->serviceStatus);
+        static::assertCount(1, $actual->getServices());
+        static::assertSame('PRODUKTION_BEREIT', $actual->getServices()[0]->serviceStatus);
 
-        $service = (array)$actual->services[0];
+        $service = (array)$actual->getServices()[0];
 
         static::assertSame(
             [
@@ -500,10 +500,10 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->confirmReceipt($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('PRODUKTION_ERFOLGREICH', $actual->services[0]->serviceStatus);
+        static::assertCount(1, $actual->getServices());
+        static::assertSame('PRODUKTION_ERFOLGREICH', $actual->getServices()[0]->serviceStatus);
 
-        $service = (array)$actual->services[0];
+        $service = (array)$actual->getServices()[0];
 
         static::assertSame(
             [
@@ -546,12 +546,12 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->searchServices($parameter);
 
-        $this->assertCount(19, $actual->services);
-        $this->assertEquals('949e2e6a-fdd1-4f07-8784-201e588ae834', $actual->services[0]->tkId);
-        $this->assertEquals('2019-09-01 00:00:00', $actual->services[0]->validFrom->toDateTimeString());
-        $this->assertEquals('2019-10-01 05:00:00', $actual->services[0]->validTo->toDateTimeString());
-        $this->assertEquals('51648', $actual->services[0]->productNumber);
-        $this->assertEquals(['100', '123'], $actual->services[0]->zones);
-        $this->assertEquals([], $actual->services[1]->zones);
+        $this->assertCount(19, $actual->getServices());
+        $this->assertEquals('949e2e6a-fdd1-4f07-8784-201e588ae834', $actual->getServices()[0]->tkId);
+        $this->assertEquals('2019-09-01 00:00:00', $actual->getServices()[0]->validFrom->toDateTimeString());
+        $this->assertEquals('2019-10-01 05:00:00', $actual->getServices()[0]->validTo->toDateTimeString());
+        $this->assertEquals('51648', $actual->getServices()[0]->productNumber);
+        $this->assertEquals(['100', '123'], $actual->getServices()[0]->zones);
+        $this->assertEquals([], $actual->getServices()[1]->zones);
     }
 }
