@@ -14,19 +14,7 @@ final class NovaCreateServicesResult
      *
      * @var NovaServiceItem[]
      */
-    private $services = [];
-
-    /**
-     * Add service.
-     *
-     * @param NovaServiceItem $novaService The nova service
-     *
-     * @return void
-     */
-    public function addService(NovaServiceItem $novaService)
-    {
-        $this->services[] = $novaService;
-    }
+    public $services = [];
 
     /**
      * Get services.

@@ -275,7 +275,7 @@ final class NovaCreateOffersMethod implements NovaMethod
             $travelClass = $xml->getAttributeValue('produktEinflussFaktoren/@klasse', $offerNode);
             $offer->travelClass = $travelClass;
 
-            $result->addOffer($offer);
+            $result->offers[] = $offer;
         }
 
         return $result;
