@@ -190,7 +190,7 @@ final class NovaPurchaseServicesMethod implements NovaMethod
             $serviceItem->vatAmount = $xml->getAttributeValue('verkaufsPreis/mwstAnteil/@betrag', $serviceNode);
             $serviceItem->vatPercent = $xml->getAttributeValue('verkaufsPreis/mwstAnteil/@mwstSatz', $serviceNode);
 
-            $result->addService($serviceItem);
+            $result->services[] = $serviceItem;
         }
 
         return $result;

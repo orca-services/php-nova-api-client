@@ -123,19 +123,23 @@ final class NovaSearchPartnerMethod implements NovaMethod
 
         $parameterWriter = new NovaParameterWriter($dom, $partnerSearchParameter);
 
-        $parameterWriter->appendToDocument(new NovaParameterMap([
-            'tkid' => $parameter->tkId,
-            'grundkartenNummer' => $parameter->cardNumber,
-            'ckm' => $parameter->ckm,
-            'name' => $parameter->lastName,
-            'vorname' => $parameter->firstName,
-            'mail' => $parameter->mail,
-            'land' => $parameter->country,
-            'ort' => $parameter->city,
-            'plz' => $parameter->postalCode,
-            'strasseHnr' => $parameter->street,
-            'geburtsDatum' => $parameter->dateOfBirth ? $parameter->dateOfBirth->format('Y-m-d') : null,
-        ]));
+        $parameterWriter->appendToDocument(
+            new NovaParameterMap(
+                [
+                    'tkid' => $parameter->tkId,
+                    'grundkartenNummer' => $parameter->cardNumber,
+                    'ckm' => $parameter->ckm,
+                    'name' => $parameter->lastName,
+                    'vorname' => $parameter->firstName,
+                    'mail' => $parameter->mail,
+                    'land' => $parameter->country,
+                    'ort' => $parameter->city,
+                    'plz' => $parameter->postalCode,
+                    'strasseHnr' => $parameter->street,
+                    'geburtsDatum' => $parameter->dateOfBirth ? $parameter->dateOfBirth->format('Y-m-d') : null,
+                ]
+            )
+        );
 
         $pagingElement = $dom->createElement('novagp:pagingParameter');
         $partnerSearchParameter->appendChild($pagingElement);
@@ -167,7 +171,7 @@ final class NovaSearchPartnerMethod implements NovaMethod
 
         /** @var DOMElement $partnerNode */
         foreach ($partnerNodes as $partnerNode) {
-            $result->addPartner($this->createPartner($partnerNode, $xml));
+            $result->partners[] = $this->createPartner($partnerNode, $xml);
         }
 
         return $result;

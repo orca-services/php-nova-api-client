@@ -164,7 +164,7 @@ final class NovaSearchServicesMethod implements NovaMethod
 
         /** @var DOMElement $serviceNode */
         foreach ($serviceNodes as $serviceNode) {
-            $result->addService($this->createService($serviceNode, $xml));
+            $result->services[] = $this->createService($serviceNode, $xml);
         }
 
         return $result;
@@ -193,7 +193,7 @@ final class NovaSearchServicesMethod implements NovaMethod
         $service->productNumber = $xml->getAttributeValue('@produktNummer', $serviceNode);
 
         foreach ($xml->queryNodes('geltungsBereich/zonenGeltungsBereich/zonenBuendel/zonen', $serviceNode) as $zone) {
-            $service->addZone($xml->getNodeValue('code', $zone));
+            $service->zones[] = $xml->getNodeValue('code', $zone);
         }
 
         return $service;
