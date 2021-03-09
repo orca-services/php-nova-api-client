@@ -124,30 +124,30 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->searchPartner($parameter);
 
-        static::assertEmpty($actual->messages);
-        static::assertNotEmpty($actual->partners);
-        static::assertCount(1, $actual->partners);
+        $this->assertEmpty($actual->messages);
+        $this->assertNotEmpty($actual->partners);
+        $this->assertCount(1, $actual->partners);
 
         $partner = $actual->partners[0];
 
-        static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
-        static::assertSame('164-937-314-5', $partner->ckm);
-        static::assertSame('DAW856', $partner->cardNumber);
-        static::assertSame('4133', $partner->postalCode);
-        static::assertSame('CH', $partner->country);
-        static::assertSame('Pratteln', $partner->city);
-        static::assertSame('4133', $partner->postalCode);
-        static::assertNull($partner->additional);
-        static::assertSame('Bahnhofstrasse 1', $partner->street);
-        static::assertSame('1234', $partner->poBox);
-        static::assertSame('+41612330975', $partner->phoneNumber);
-        static::assertSame('+41792330976', $partner->mobileNumber);
-        static::assertSame('max.mustermann@example.com', $partner->email);
-        static::assertSame('Mustermann', $partner->firstName); // should be the lastName
-        static::assertSame('Max', $partner->lastName); // should be the firstName
-        static::assertSame('1982-03-28 00:00:00', $partner->dateOfBirth->toDateTimeString());
-        static::assertSame(1, $partner->genderTypeId);
-        static::assertSame('2019-09-02 08:13:28', $partner->changedAt->toDateTimeString());
+        $this->assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
+        $this->assertSame('164-937-314-5', $partner->ckm);
+        $this->assertSame('DAW856', $partner->cardNumber);
+        $this->assertSame('4133', $partner->postalCode);
+        $this->assertSame('CH', $partner->country);
+        $this->assertSame('Pratteln', $partner->city);
+        $this->assertSame('4133', $partner->postalCode);
+        $this->assertNull($partner->additional);
+        $this->assertSame('Bahnhofstrasse 1', $partner->street);
+        $this->assertSame('1234', $partner->poBox);
+        $this->assertSame('+41612330975', $partner->phoneNumber);
+        $this->assertSame('+41792330976', $partner->mobileNumber);
+        $this->assertSame('max.mustermann@example.com', $partner->email);
+        $this->assertSame('Mustermann', $partner->firstName); // should be the lastName
+        $this->assertSame('Max', $partner->lastName); // should be the firstName
+        $this->assertSame('1982-03-28 00:00:00', $partner->dateOfBirth->toDateTimeString());
+        $this->assertSame(1, $partner->genderTypeId);
+        $this->assertSame('2019-09-02 08:13:28', $partner->changedAt->toDateTimeString());
     }
 
     /**
@@ -171,15 +171,15 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->searchPartner($parameter);
 
-        static::assertEmpty($actual->messages);
-        static::assertNotEmpty($actual->partners);
-        static::assertCount(1, $actual->partners);
+        $this->assertEmpty($actual->messages);
+        $this->assertNotEmpty($actual->partners);
+        $this->assertCount(1, $actual->partners);
 
         $partner = $actual->partners[0];
 
-        static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
-        static::assertSame('164-937-314-5', $partner->ckm);
-        static::assertSame('DAW856', $partner->cardNumber);
+        $this->assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
+        $this->assertSame('164-937-314-5', $partner->ckm);
+        $this->assertSame('DAW856', $partner->cardNumber);
     }
 
     /**
@@ -210,15 +210,15 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->searchPartner($parameter);
 
-        static::assertEmpty($actual->messages);
-        static::assertNotEmpty($actual->partners);
-        static::assertCount(1, $actual->partners);
+        $this->assertEmpty($actual->messages);
+        $this->assertNotEmpty($actual->partners);
+        $this->assertCount(1, $actual->partners);
 
         $partner = $actual->partners[0];
 
-        static::assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
-        static::assertSame('164-937-314-5', $partner->ckm);
-        static::assertSame('DAW856', $partner->cardNumber);
+        $this->assertSame('949e2e6a-fdd1-4f07-8784-201e588ae834', $partner->tkId);
+        $this->assertSame('164-937-314-5', $partner->ckm);
+        $this->assertSame('DAW856', $partner->cardNumber);
     }
 
     /**
@@ -256,9 +256,9 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->checkSwissPassValidity($parameter);
 
-        static::assertSame($actual->status, $status);
-        static::assertSame($actual->result, $result);
-        static::assertCount($messageCount, $actual->messages);
+        $this->assertSame($actual->status, $status);
+        $this->assertSame($actual->result, $result);
+        $this->assertCount($messageCount, $actual->messages);
     }
 
     /**
@@ -314,22 +314,22 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->createOffers($parameter);
 
-        static::assertCount(1, $actual->offers);
+        $this->assertCount(1, $actual->offers);
 
         $offer = $actual->offers[0];
 
-        static::assertSame('_5c63dc7d-62e5-4f3a-a761-464488e92000', $offer->novaOfferId);
-        static::assertSame('105.00', $offer->price);
-        static::assertSame('CHF', $offer->currency);
-        static::assertSame('51648', $offer->productNumber);
-        static::assertSame('Alle Zonen, Erwachsene, Monate', $offer->title);
-        static::assertSame('2019-09-01 00:00:00', $offer->validFrom->toDateTimeString());
-        static::assertSame('2019-09-30 23:59:59', $offer->validTo->toDateTimeString());
-        static::assertSame('SWISSPASS', $offer->carrierMedium);
-        static::assertSame('KLASSE_2', $offer->travelClass);
+        $this->assertSame('_5c63dc7d-62e5-4f3a-a761-464488e92000', $offer->novaOfferId);
+        $this->assertSame('105.00', $offer->price);
+        $this->assertSame('CHF', $offer->currency);
+        $this->assertSame('51648', $offer->productNumber);
+        $this->assertSame('Alle Zonen, Erwachsene, Monate', $offer->title);
+        $this->assertSame('2019-09-01 00:00:00', $offer->validFrom->toDateTimeString());
+        $this->assertSame('2019-09-30 23:59:59', $offer->validTo->toDateTimeString());
+        $this->assertSame('SWISSPASS', $offer->carrierMedium);
+        $this->assertSame('KLASSE_2', $offer->travelClass);
 
-        static::assertCount(1, $actual->messages);
-        static::assertSame(
+        $this->assertCount(1, $actual->messages);
+        $this->assertSame(
             [
                 'id' => 'M0',
                 'code' => '33098',
@@ -365,12 +365,12 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->createService($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('OFFERIERT', $actual->services[0]->serviceStatus);
+        $this->assertCount(1, $actual->services);
+        $this->assertSame('OFFERIERT', $actual->services[0]->serviceStatus);
 
         $service = (array)$actual->services[0];
 
-        static::assertSame(
+        $this->assertSame(
             [
                 'tkId' => '949e2e6a-fdd1-4f07-8784-201e588ae834',
                 'serviceId' => '15900011821804',
@@ -385,7 +385,7 @@ class NovaApiClientTest extends TestCase
             $service
         );
 
-        static::assertEmpty($actual->messages);
+        $this->assertEmpty($actual->messages);
     }
 
     /**
@@ -412,12 +412,12 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->purchaseService($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('VERKAUFT', $actual->services[0]->serviceStatus);
+        $this->assertCount(1, $actual->services);
+        $this->assertSame('VERKAUFT', $actual->services[0]->serviceStatus);
 
         $service = (array)$actual->services[0];
 
-        static::assertSame(
+        $this->assertSame(
             [
                 'tkId' => '949e2e6a-fdd1-4f07-8784-201e588ae834',
                 'serviceId' => '15900011821804',
@@ -432,7 +432,7 @@ class NovaApiClientTest extends TestCase
             $service
         );
 
-        static::assertEmpty($actual->messages);
+        $this->assertEmpty($actual->messages);
     }
 
     /**
@@ -456,12 +456,12 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->createReceipt($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('PRODUKTION_BEREIT', $actual->services[0]->serviceStatus);
+        $this->assertCount(1, $actual->services);
+        $this->assertSame('PRODUKTION_BEREIT', $actual->services[0]->serviceStatus);
 
         $service = (array)$actual->services[0];
 
-        static::assertSame(
+        $this->assertSame(
             [
                 'tkId' => '949e2e6a-fdd1-4f07-8784-201e588ae834',
                 'serviceId' => '15900011821804',
@@ -476,7 +476,7 @@ class NovaApiClientTest extends TestCase
             $service
         );
 
-        static::assertEmpty($actual->messages);
+        $this->assertEmpty($actual->messages);
     }
 
     /**
@@ -500,12 +500,12 @@ class NovaApiClientTest extends TestCase
 
         $actual = $client->confirmReceipt($parameter);
 
-        static::assertCount(1, $actual->services);
-        static::assertSame('PRODUKTION_ERFOLGREICH', $actual->services[0]->serviceStatus);
+        $this->assertCount(1, $actual->services);
+        $this->assertSame('PRODUKTION_ERFOLGREICH', $actual->services[0]->serviceStatus);
 
         $service = (array)$actual->services[0];
 
-        static::assertSame(
+        $this->assertSame(
             [
                 'tkId' => '949e2e6a-fdd1-4f07-8784-201e588ae834',
                 'serviceId' => '15900011821804',
@@ -520,7 +520,7 @@ class NovaApiClientTest extends TestCase
             $service
         );
 
-        static::assertEmpty($actual->messages);
+        $this->assertEmpty($actual->messages);
     }
 
     /**
