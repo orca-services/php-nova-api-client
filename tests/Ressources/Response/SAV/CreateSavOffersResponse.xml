@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ns14:erstelleSAVAngeboteResponse xmlns:ns14="http://nova.voev.ch/services/v14/vertrieb"
+										  xmlns="http://nova.voev.ch/services/v14/vertrieb"
+										  xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner"
+										  xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass"
+										  xmlns:inkasso="http://nova.voev.ch/services/v14/inkasso"
+										  xmlns:base="http://nova.voev.ch/services/v14/base"
+										  xmlns:nova-preisauskunft="http://nova.voev.ch/services/v14/preisauskunft"
+										  xmlns:offlinemanagement="http://nova.voev.ch/services/v14/vertrieb/offlinemanagement"
+										  xmlns:nova-erneuerungsinfo="http://nova.voev.ch/services/v14/vertrieb/erneuerungsinfo"
+										  xmlns:nova-protokoll="http://nova.voev.ch/services/v14/vertrieb/protokoll"
+										  xmlns:vs="http://nova.voev.ch/services/v14/vertrieb/vertriebsstammdaten"
+										  xmlns:vertriebsbase="http://nova.voev.ch/services/v14/vertriebsbase"
+										  xmlns:nova-powertools="http://nova.voev.ch/services/v14/powertools"
+										  xmlns:nova-leistungnotiz="http://nova.voev.ch/services/v14/leistungnotiz"
+										  xmlns:ns15="http://nova.voev.ch/services/v14/leistunganteile">
+			<ns14:angebotsResponse ns14:anfrageProtokollId="e3708ee7-857d-404f-8e6f-e35e5fee12a9"
+								   ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+				<ns14:meldungen/>
+				<ns14:angebote>
+					<ns14:angebot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:SAVAngebot"
+								  ns14:ausweisPflicht="true" ns14:traegerMedium="SICHERHEITSPAPIER"
+								  ns14:angebotsId="_fc0cc655-9623-4fdb-a38b-a7f99f4c0000" ns14:produktNummer="80026"
+								  ns14:vorhalteZeitpunktBis="2021-03-31T16:14:56.000+02:00">
+						<ns14:verkaufsParameter ns14:optional="false">
+							<ns14:verkaufsParameter vertriebsbase:code="ADRESSE" vertriebsbase:wertTyp="ADRESSE">
+								<vertriebsbase:bezeichnung base:defaultWert="Adresse" base:de="Adresse"
+														   base:en="Address" base:fr="Adresse" base:it="Indirizzo"/>
+							</ns14:verkaufsParameter>
+						</ns14:verkaufsParameter>
+						<ns14:verkaufsParameter ns14:optional="false">
+							<ns14:verkaufsParameter vertriebsbase:code="KUNDENNAME" vertriebsbase:wertTyp="NAMEVORNAME">
+								<vertriebsbase:bezeichnung base:defaultWert="Kundenname" base:de="Kundenname"
+														   base:en="Client name" base:fr="Nom du client"
+														   base:it="Nome del cliente"/>
+							</ns14:verkaufsParameter>
+						</ns14:verkaufsParameter>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="-105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:zuErstattendeLeistung>
+							<ns14:originalLeistung xsi:type="ns14:Leistung" ns14:enthaeltSwissPassKarte="false"
+												   ns14:benoetigtNeuesFoto="true" ns14:leistungsId="15900020445739"
+												   ns14:erneuerungsId="0437e047-08da-45f3-a7ea-611132dfb148"
+												   ns14:leistungsReferenz="0020445739"
+												   ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+												   ns14:offerteGueltigBis="2021-03-31T16:10:31.000+02:00"
+												   ns14:verkaufsZeitpunkt="2021-03-31T15:40:32.000+02:00"
+												   ns14:erstellungsZeitpunkt="2021-03-31T15:40:34.000+02:00"
+												   ns14:produktNummer="51648" ns14:generationStichDatum="2021-05-15"
+												   ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+								<ns14:leistungsTyp ns14:code="VERKAUF">
+									<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+													  base:fr="VERKAUF" base:it="VERKAUF"/>
+								</ns14:leistungsTyp>
+								<ns14:verkaufsParameter ns14:code="REISENDER">
+									<ns14:wert>
+										<vertriebsbase:tkid>7f80a2ab-23b7-4903-8811-4800aa5a6845</vertriebsbase:tkid>
+									</ns14:wert>
+								</ns14:verkaufsParameter>
+								<ns14:zahlungsInformation>
+									<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+										<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+									</ns14:zahlungsArt>
+									<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+								</ns14:zahlungsInformation>
+								<ns14:verkaufsPreis>
+									<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+									<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+								</ns14:verkaufsPreis>
+								<ns14:tarifStufe ns14:tarifOwner="460" ns14:tarifStufenCode="ALLE_ZONEN">
+									<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+														  base:en="All Zones" base:fr="Toutes les zones"
+														  base:it="Tutte le zone"/>
+								</ns14:tarifStufe>
+								<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+															ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+									<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE"
+														base:geschaeftsFeld="B2C"
+														base:bezeichnung="BLT_Online_Barakuda"/>
+								</ns14:verkaeuferInformation>
+								<ns14:savProtokoll/>
+								<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2021-05-15">
+									<ns14:tarifStufe ns14:tarifOwner="460" ns14:tarifStufenCode="ALLE_ZONEN">
+										<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+															  base:en="All Zones" base:fr="Toutes les zones"
+															  base:it="Tutte le zone"/>
+									</ns14:tarifStufe>
+									<ns14:vorverkaufsFrist>
+										<base:wert>2</base:wert>
+										<base:einheit base:code="MONATE">
+											<base:bezeichnung base:defaultWert="Monate" base:de="Monate"
+															  base:en="Months" base:fr="Mois" base:it="Mesi"/>
+										</base:einheit>
+									</ns14:vorverkaufsFrist>
+									<ns14:nutzungsZeitraum>
+										<ns14:tarifierbarerZeitraum base:von="2021-05-15T00:00:00.000+02:00"
+																	base:bis="2021-06-15T05:00:00.000+02:00"/>
+										<ns14:ausweisbarerZeitraum vertriebsbase:von="2021-05-15"
+																   vertriebsbase:bis="2021-06-14"/>
+									</ns14:nutzungsZeitraum>
+								</ns14:nutzungsInfo>
+								<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+									<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+										<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene"
+														  base:en="Adults" base:fr="Adultes" base:it="Adulti"/>
+									</ns14:kundenSegment>
+									<ns14:geltungsDauer>
+										<ns14:nutzungsGeltungsDauer>
+											<base:wert>1</base:wert>
+											<base:einheit base:code="MONATE">
+												<base:bezeichnung base:defaultWert="Monate" base:de="Monate"
+																  base:en="Months" base:fr="Mois" base:it="Mesi"/>
+											</base:einheit>
+										</ns14:nutzungsGeltungsDauer>
+									</ns14:geltungsDauer>
+								</ns14:produktEinflussFaktoren>
+								<ns14:geltungsBereich ns14:id="gbb5a08a3e-2e6a-4b1f-bc30-e921a29ebc0a">
+									<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+										<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+											<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen"
+																	   base:de="Alle Zonen" base:en="All Zones"
+																	   base:fr="Toutes les zones"
+																	   base:it="Tutte le zone"/>
+										</vertriebsbase:reiseRouteSegment>
+									</ns14:wegAngabe>
+									<ns14:zonenGeltungsBereich>
+										<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+														   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT">
+											<ns14:bezeichnung base:defaultWert=" "/>
+										</ns14:zonenBuendel>
+									</ns14:zonenGeltungsBereich>
+									<ns14:streckenGeltungsBereich/>
+								</ns14:geltungsBereich>
+							</ns14:originalLeistung>
+							<ns14:erstattungsDaten ns14:erstattungsTyp="VOLLERSTATTUNG"
+												   ns14:entschaedigungDatum="2021-03-31">
+								<ns14:erstattungsBetrag>
+									<base:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+									<base:mwstAnteil base:betrag="-105.00" base:mwstSatz="7.70"/>
+								</ns14:erstattungsBetrag>
+								<ns14:preisBenutzterTeil base:betrag="0.00" base:waehrung="CHF"/>
+								<ns14:benutzterTeil>
+									<base:geldBetrag base:betrag="0.00" base:waehrung="CHF"/>
+									<base:mwstAnteil base:betrag="0.00" base:mwstSatz="7.70"/>
+								</ns14:benutzterTeil>
+								<ns14:erstattungsGrund vertriebsbase:code="RUECKGABE_VOR_1GELTUNGSTAG">
+									<vertriebsbase:bezeichnung base:defaultWert="Rückgabe vor 1. Geltungstag"
+															   base:de="Rückgabe vor 1. Geltungstag"
+															   base:en="Returned before 1st day of validity"
+															   base:fr="Restitution avant le 1er jour de validité"
+															   base:it="Restituzione prima del 1° giorno di validità"/>
+								</ns14:erstattungsGrund>
+							</ns14:erstattungsDaten>
+						</ns14:zuErstattendeLeistung>
+						<ns14:totalErstattungsBetraege base:betrag="-105.00" base:waehrung="CHF"/>
+						<ns14:maxSelbstbehalt base:betrag="0.00" base:waehrung="CHF"/>
+						<ns14:angewendeterSelbstbehalt base:betrag="0.00" base:waehrung="CHF"/>
+						<ns14:minSelbstbehalt base:betrag="0.00" base:waehrung="CHF"/>
+					</ns14:angebot>
+				</ns14:angebote>
+				<ns14:reisende/>
+				<ns14:angebotsPakete>
+					<ns14:angebotsPaket ns14:id="P0" ns14:paketbedingung="SEPARATER_KAUF_MOEGLICH">
+						<ns14:angebotRefs>_fc0cc655-9623-4fdb-a38b-a7f99f4c0000</ns14:angebotRefs>
+					</ns14:angebotsPaket>
+				</ns14:angebotsPakete>
+				<ns14:geltungsBereiche>
+					<ns14:geltungsBereich ns14:id="gb5c7ce211-6e2e-4205-90f3-602066455459">
+						<ns14:zonenGeltungsBereich/>
+						<ns14:streckenGeltungsBereich/>
+					</ns14:geltungsBereich>
+				</ns14:geltungsBereiche>
+			</ns14:angebotsResponse>
+		</ns14:erstelleSAVAngeboteResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

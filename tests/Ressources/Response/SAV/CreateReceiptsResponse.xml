@@ -1,0 +1,908 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ns14:erstelleBelegeResponse xmlns:ns14="http://nova.voev.ch/services/v14/vertrieb"
+									 xmlns="http://nova.voev.ch/services/v14/vertrieb"
+									 xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner"
+									 xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass"
+									 xmlns:inkasso="http://nova.voev.ch/services/v14/inkasso"
+									 xmlns:base="http://nova.voev.ch/services/v14/base"
+									 xmlns:nova-preisauskunft="http://nova.voev.ch/services/v14/preisauskunft"
+									 xmlns:offlinemanagement="http://nova.voev.ch/services/v14/vertrieb/offlinemanagement"
+									 xmlns:nova-erneuerungsinfo="http://nova.voev.ch/services/v14/vertrieb/erneuerungsinfo"
+									 xmlns:nova-protokoll="http://nova.voev.ch/services/v14/vertrieb/protokoll"
+									 xmlns:vs="http://nova.voev.ch/services/v14/vertrieb/vertriebsstammdaten"
+									 xmlns:vertriebsbase="http://nova.voev.ch/services/v14/vertriebsbase"
+									 xmlns:nova-powertools="http://nova.voev.ch/services/v14/powertools"
+									 xmlns:nova-leistungnotiz="http://nova.voev.ch/services/v14/leistungnotiz"
+									 xmlns:ns15="http://nova.voev.ch/services/v14/leistunganteile">
+			<ns14:belegResponse ns14:anfrageProtokollId="8f9e089c-00da-4709-a7cc-f5e1163a61cf"
+								ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+				<ns14:meldungen/>
+				<ns14:leistungsDruckDaten>
+					<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:SAVLeistung"
+								   ns14:traegerMedium="SICHERHEITSPAPIER" ns14:leistungsId="15900020446658"
+								   ns14:leistungsReferenz="0020446658" ns14:leistungsStatus="PRODUKTION_BEREIT"
+								   ns14:offerteGueltigBis="2021-03-31T16:25:24.000+02:00"
+								   ns14:verkaufsZeitpunkt="2021-03-31T15:55:44.000+02:00"
+								   ns14:erstellungsZeitpunkt="2021-03-31T15:56:06.000+02:00" ns14:produktNummer="80026"
+								   ns14:generationStichDatum="2021-03-31"
+								   ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+						<ns14:leistungsTyp ns14:code="ERSTATTUNG">
+							<ns14:bezeichnung base:defaultWert="ERSTATTUNG" base:de="ERSTATTUNG" base:en="ERSTATTUNG"
+											  base:fr="ERSTATTUNG" base:it="ERSTATTUNG"/>
+						</ns14:leistungsTyp>
+						<ns14:verkaufsParameter ns14:code="ADRESSE">
+							<ns14:wert>
+								<vertriebsbase:adresse base:land="CH" base:ort="4000" base:postfachVorhanden="false"/>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:verkaufsParameter ns14:code="KUNDENNAME">
+							<ns14:wert>
+								<vertriebsbase:nameVorname base:name="Doe" base:vorname="John"/>
+							</ns14:wert>
+						</ns14:verkaufsParameter>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+						<ns14:verkaufsPreis>
+							<base:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="-105.00" base:mwstSatz="7.70"/>
+						</ns14:verkaufsPreis>
+						<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+													ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+							<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+												base:bezeichnung="BLT_Online_Barakuda"/>
+						</ns14:verkaeuferInformation>
+						<ns14:savProtokoll/>
+						<ns14:totalErstattungsBetraege base:betrag="-105.00" base:waehrung="CHF"/>
+						<ns14:erstatteteLeistung ns14:leistungsId="15900020445739">
+							<ns14:originalPreis>
+								<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+								<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+							</ns14:originalPreis>
+							<ns14:erstattungsDaten ns14:erstattungsTyp="VOLLERSTATTUNG"
+												   ns14:entschaedigungDatum="2021-03-31">
+								<ns14:erstattungsBetrag>
+									<base:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+									<base:mwstAnteil base:betrag="-105.00" base:mwstSatz="7.70"/>
+								</ns14:erstattungsBetrag>
+								<ns14:preisBenutzterTeil base:betrag="0.00" base:waehrung="CHF"/>
+								<ns14:benutzterTeil>
+									<base:geldBetrag base:betrag="0.00" base:waehrung="CHF"/>
+									<base:mwstAnteil base:betrag="0.00" base:mwstSatz="7.70"/>
+								</ns14:benutzterTeil>
+								<ns14:erstattungsGrund vertriebsbase:code="RUECKGABE_VOR_1GELTUNGSTAG">
+									<vertriebsbase:bezeichnung base:defaultWert="Rückgabe vor 1. Geltungstag"
+															   base:de="Rückgabe vor 1. Geltungstag"
+															   base:en="Returned before 1st day of validity"
+															   base:fr="Restitution avant le 1er jour de validité"
+															   base:it="Restituzione prima del 1° giorno di validità"/>
+								</ns14:erstattungsGrund>
+							</ns14:erstattungsDaten>
+							<ns14:zahlungsInformation>
+								<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+									<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+								</ns14:zahlungsArt>
+								<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							</ns14:zahlungsInformation>
+						</ns14:erstatteteLeistung>
+					</ns14:leistung>
+					<ns14:beleg vertriebsbase:belegId="4" vertriebsbase:belegTyp="ERSTATTUNGSBELEG"
+								vertriebsbase:produktNummer="80026">
+						<vertriebsbase:traegerMediumTyp vertriebsbase:code="BLANCO">
+							<vertriebsbase:bezeichnung base:defaultWert="Blanco" base:de="Blanco" base:en="Blank"
+													   base:fr="Vierge" base:it="In bianco"/>
+						</vertriebsbase:traegerMediumTyp>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>BELEG_TITEL</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:localizedText base:defaultWert="Erstattung/Annullierung"
+														 base:de="Erstattung/Annullierung" base:en="Refund/Cancellation"
+														 base:fr="Remboursement/Annulation"
+														 base:it="Rimborso/Annullamento"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_AUSZAHLUNGERHALTEN</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Betrag erhalten" base:de="Betrag erhalten"
+												 base:en="Amount received" base:fr="Montant reçu"
+												 base:it="Importo ricevuto"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_AUSZAHLUNGSBETRAG</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Erstattung" base:de="Erstattung" base:en="Refund"
+												 base:fr="Remboursement" base:it="Rimborso"/>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_BEGRUENDUNG</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Begründung für Übersteuern Selbstbehalt"
+												 base:de="Begründung für Übersteuern Selbstbehalt"
+												 base:en="Reason for excess override"
+												 base:fr="Motif de dépassement de la franchise"
+												 base:it="Causale sostituzione franchigia"/>
+							<vertriebsbase:text></vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ERSTATTUNGSDATUM</vertriebsbase:key>
+							<vertriebsbase:typ>DATUM</vertriebsbase:typ>
+							<vertriebsbase:datum>2021-03-31</vertriebsbase:datum>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_ERSTATTUNGSBETRAG</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Restbetrag" base:de="Restbetrag"
+												 base:en="Remaining amount" base:fr="Montant résiduel"
+												 base:it="Importo residuo"/>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_ERSTATTUNGSGRUND_BEZEICHNUNG
+							</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:localizedText base:defaultWert="Rückgabe vor 1. Geltungstag"
+														 base:de="Rückgabe vor 1. Geltungstag"
+														 base:en="Returned before 1st day of validity"
+														 base:fr="Restitution avant le 1er jour de validité"
+														 base:it="Restituzione prima del 1° giorno di validità"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_ERSTATTUNGSGRUND_KEY</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>RUECKGABE_VOR_1GELTUNGSTAG</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_ID</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Billett" base:de="Billett" base:en="Ticket"
+												 base:fr="billet" base:it="biglietto"/>
+							<vertriebsbase:ganzZahl>15900020445739</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_ORIGINALPREIS</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Bezahlt" base:de="Bezahlt" base:en="Paid"
+												 base:fr="Payé" base:it="Pagato"/>
+							<vertriebsbase:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_PREISBENUTZTERTEIL</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Benützt" base:de="Benützt" base:en="Used"
+												 base:fr="Utilisé" base:it="Utilizzato"/>
+							<vertriebsbase:geldBetrag base:betrag="0.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_PRODUKT_BEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:localizedText base:defaultWert="TNW U-Abo Monatsabo persönlich Auswärtige"
+														 base:de="TNW U-Abo Monatsabo persönlich Auswärtige"
+														 base:en="TNW U-Abo Monthly Season Ticket personal non-residents"
+														 base:fr="TNW U-Abo Abonnement mensuel non résidents"
+														 base:it="TNW U-Abo Abbonamento mensile personale non residenti"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_PRODUKT_NUMMER</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Artikel-Nr." base:de="Artikel-Nr."
+												 base:en="Article no." base:fr="No article" base:it="No articolo"/>
+							<vertriebsbase:ganzZahl>51648</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_REFERENZ</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>0020445739</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_ORIGINALLEISTUNG_TRAEGERMEDIUM_BEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:localizedText base:defaultWert="SwissPass"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_SELBSTBEHALT</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Selbstbehalt" base:de="Selbstbehalt"
+												 base:en="Deductible" base:fr="Franchise" base:it="Franchigia"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>ERSTATTUNG_TOTALERSTATTUNGSBETRAEGE</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Total" base:de="Total" base:en="Total"
+												 base:fr="Total" base:it="Totale"/>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_AUSGABEZEITPUNKT</vertriebsbase:key>
+							<vertriebsbase:typ>DATUMZEIT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Ausstelldatum/Zeit:" base:de="Ausstelldatum/Zeit:"
+												 base:en="Date/time of issue:" base:fr="Date/heure d'émission:"
+												 base:it="Data/ora di emissione:"/>
+							<vertriebsbase:datumZeit>2021-03-31T15:56:06.000+02:00</vertriebsbase:datumZeit>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_ID</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:ganzZahl>15900020446658</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_MWSTANTEIL_BETRAG</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_MWSTANTEIL_MWSTSATZ</vertriebsbase:key>
+							<vertriebsbase:typ>DEZIMALZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="MwSt." base:de="MwSt." base:en="VAT" base:fr="TVA"
+												 base:it="IVA"/>
+							<vertriebsbase:dezimalZahl>7.70</vertriebsbase:dezimalZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_PRODUKT_BEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Artikelname:" base:de="Artikelname:"
+												 base:en="Item name:" base:fr="Nom de l’article:"
+												 base:it="Denominazione articolo:"/>
+							<vertriebsbase:localizedText base:defaultWert="Erstattung" base:de="Erstattung"
+														 base:en="Refund" base:fr="Remboursement" base:it="Rimborso"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_REFERENZ</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Referenz-Nr.:" base:de="Referenz-Nr.:"
+												 base:en="Reference no.:" base:fr="No référence:"
+												 base:it="No riferimento:"/>
+							<vertriebsbase:text>0020446658</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_TEILZAHLUNGSART_BETRAG</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_TEILZAHLUNGSART_KEY</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>BAR</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_ADRESSE</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Adresse:" base:de="Adresse:" base:en="Address:"
+												 base:fr="Adresse:" base:it="Indirizzo:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_GEBURTSDATUM</vertriebsbase:key>
+							<vertriebsbase:typ>DATUM</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Geburtsdatum:" base:de="Geburtsdatum:"
+												 base:en="Date of birth:" base:fr="Date de naissance:"
+												 base:it="Data di nascita:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_GRUNDKARTE_NR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Grundkarte:" base:de="Grundkarte:"
+												 base:en="Basic card:" base:fr="Carte de base:"
+												 base:it="Tessera base:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_KFZ_NR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="SCHILD:" base:de="SCHILD:" base:en="REG. NO."
+												 base:fr="PLAQUE:" base:it="TARGA:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_KUNDE</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Kunde, Kundin" base:de="Kunde, Kundin"
+												 base:en="Customer" base:fr="Client, cliente" base:it="Cliente"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_KUNDENNUMMER</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Kunden-Nr.:" base:de="Kunden-Nr.:"
+												 base:en="Customer no.:" base:fr="No client:" base:it="No cliente:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_LAND</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Land:" base:de="Land:" base:en="Country:"
+												 base:fr="Pays:" base:it="Paese:"/>
+							<vertriebsbase:text>CH</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_NAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Name:" base:de="Name:" base:en="Name:" base:fr="Nom:"
+												 base:it="Cognome:"/>
+							<vertriebsbase:text>Doe</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_NAME_VORNAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Name/Vorname:" base:de="Name/Vorname:"
+												 base:en="Name/First name:" base:fr="Nom/Prénom:"
+												 base:it="Cognome/Nome:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_ORT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Ort" base:de="Ort" base:en="City" base:fr="Lieu"
+												 base:it="Localita"/>
+							<vertriebsbase:text>4000</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_PASS_NR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Passnummer:" base:de="Passnummer:"
+												 base:en="Pass no.:" base:fr="Numéro de passeport:"
+												 base:it="No passaporto:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_PLZ</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="PLZ" base:de="PLZ" base:en="Postal Code"
+												 base:fr="NPA" base:it="NPA"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_PLZ_ORT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="PLZ/Ort:" base:de="PLZ/Ort:"
+												 base:en="Postcode/town or city:" base:fr="NPA/lieu:"
+												 base:it="NPA/località:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_POSTFACH</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Postfach:" base:de="Postfach:" base:en="Post Box:"
+												 base:fr="Case postale:" base:it="Casella postale:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_POSTFACH_VORHANDEN</vertriebsbase:key>
+							<vertriebsbase:typ>BOOLEAN</vertriebsbase:typ>
+							<vertriebsbase:boolean>false</vertriebsbase:boolean>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_STRASSEHNR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Adresse:" base:de="Adresse:" base:en="Address:"
+												 base:fr="Adresse:" base:it="Indirizzo:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_UNTERSCHRIFT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Unterschrift:" base:de="Unterschrift:"
+												 base:en="Signature:" base:fr="Signature:" base:it="Firma:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_VORNAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Vorname:" base:de="Vorname:" base:en="First name:"
+												 base:fr="Prénom:" base:it="Nome:"/>
+							<vertriebsbase:text>John</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_AUSGABEGERAET</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Arbeitsplatz-Nr.:" base:de="Arbeitsplatz-Nr.:"
+												 base:en="Workspace no.:" base:fr="Poste de travail n°:"
+												 base:it="No postazione di lavoro:"/>
+							<vertriebsbase:text>1</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_DIENSTSTELLE_BEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Dienststelle:" base:de="Dienststelle:"
+												 base:en="Department:" base:fr="Service:" base:it="Servizio:"/>
+							<vertriebsbase:text>BLT Barakuda</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_DIENSTSTELLE_NR</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:ganzZahl>5318</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_LEISTUNGSVERMITTLER_KENNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>BLT</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_LEISTUNGSVERMITTLER_PARTNERCODE</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:ganzZahl>37</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_LEISTUNGSVERMITTLER_PARTNERKUERZEL</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>BLT-blt</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_ADRESSE_LAND</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>CH</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_ADRESSE_ORT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>4000</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_KUNDENNAME_NAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>Doe</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_KUNDENNAME_VORNAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>John</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+					</ns14:beleg>
+					<ns14:beleg vertriebsbase:belegId="5" vertriebsbase:belegTyp="LEISTUNGSDATEN"
+								vertriebsbase:produktNummer="80026">
+						<vertriebsbase:traegerMediumTyp vertriebsbase:code="BLANCO">
+							<vertriebsbase:bezeichnung base:defaultWert="Blanco" base:de="Blanco" base:en="Blank"
+													   base:fr="Vierge" base:it="In bianco"/>
+						</vertriebsbase:traegerMediumTyp>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>BELEG_TITEL</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:localizedText base:defaultWert="Kaufquittung" base:de="Kaufquittung"
+														 base:en="Purchase receipt" base:fr="Quittance d'achat"
+														 base:it="Ricevuta d'acquisto"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_AUSGABEZEITPUNKT</vertriebsbase:key>
+							<vertriebsbase:typ>DATUMZEIT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Ausstelldatum/Zeit:" base:de="Ausstelldatum/Zeit:"
+												 base:en="Date/time of issue:" base:fr="Date/heure d'émission:"
+												 base:it="Data/ora di emissione:"/>
+							<vertriebsbase:datumZeit>2021-03-31T15:56:06.000+02:00</vertriebsbase:datumZeit>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_EINHEITEN_ANZAHL</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Entwertungen" base:de="Entwertungen"
+												 base:en="Validations" base:fr="Oblitérations" base:it="Obliterazioni"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_ENTWERTUNGSZEITRAUM_GUELTIGBIS</vertriebsbase:key>
+							<vertriebsbase:typ>DATUMZEIT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Verfall:" base:de="Verfall:" base:en="Expiry:"
+												 base:fr="Echéance:" base:it="Scadenza:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_ENTWERTUNGSZEITRAUM_GUELTIGVON</vertriebsbase:key>
+							<vertriebsbase:typ>DATUMZEIT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Gültig ab:" base:de="Gültig ab:"
+												 base:en="Valid from:" base:fr="Valable dès le:" base:it="Valido dal:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_ID</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:ganzZahl>15900020446658</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_KLASSE_BEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert=". Kl." base:de=". Kl." base:en=". Cl."
+												 base:fr=". Cl." base:it=". Cl."/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_KUNDENSEGMENT</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:localizedText base:defaultWert="Erwachsene" base:de="Erwachsene"
+														 base:en="Adults" base:fr="Adultes" base:it="Adulti"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_MWSTANTEIL_BETRAG</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_MWSTANTEIL_MWSTSATZ</vertriebsbase:key>
+							<vertriebsbase:typ>DEZIMALZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="MwSt." base:de="MwSt." base:en="VAT" base:fr="TVA"
+												 base:it="IVA"/>
+							<vertriebsbase:dezimalZahl>7.70</vertriebsbase:dezimalZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_MWST_INKLUSIVBEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="inkl." base:de="inkl." base:en="incl."
+												 base:fr="incl." base:it="incl."/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_MWST_SATZ</vertriebsbase:key>
+							<vertriebsbase:typ>DEZIMALZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="MWST" base:de="MWST" base:en="VAT" base:fr="TVA"
+												 base:it="IVA"/>
+							<vertriebsbase:dezimalZahl>7.70</vertriebsbase:dezimalZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_NUTZUNGSGELTUNGSDAUER_WERT</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Geltungsdauer:" base:de="Geltungsdauer:"
+												 base:en="Duration of validity:" base:fr="Durée de validité:"
+												 base:it="Validità:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_NUTZUNG_ERSTERGELTUNGSTAG</vertriebsbase:key>
+							<vertriebsbase:typ>DATUM</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Gültig:" base:de="Gültig:" base:en="Valid:"
+												 base:fr="Valable:" base:it="Valido:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_NUTZUNG_LETZTERGELTUNGSTAG</vertriebsbase:key>
+							<vertriebsbase:typ>DATUM</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Bis:" base:de="Bis:" base:en="Until:"
+												 base:fr="Jusqu'à:" base:it="Fino alle:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_NUTZUNG_UHR</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Uhr" base:de="Uhr" base:en="o'clock" base:fr="heures"
+												 base:it="ore"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_PARKPLATZ</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="P+Rail"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_PREIS</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_PRODUKT_BEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Artikelname:" base:de="Artikelname:"
+												 base:en="Item name:" base:fr="Nom de l’article:"
+												 base:it="Denominazione articolo:"/>
+							<vertriebsbase:localizedText base:defaultWert="Erstattung" base:de="Erstattung"
+														 base:en="Refund" base:fr="Remboursement" base:it="Rimborso"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_PRODUKT_NUMMER</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Artikel-Nr.:" base:de="Artikel-Nr.:"
+												 base:en="Article no.:" base:fr="No article:" base:it="No articolo:"/>
+							<vertriebsbase:ganzZahl>80026</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_REFERENZ</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Referenz-Nr.:" base:de="Referenz-Nr.:"
+												 base:en="Reference no.:" base:fr="No référence:"
+												 base:it="No riferimento:"/>
+							<vertriebsbase:text>0020446658</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_REISEWEGINFO</vertriebsbase:key>
+							<vertriebsbase:typ>REISEWEGINFO</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Ihre Wahl:" base:de="Ihre Wahl:"
+												 base:en="Your choice:" base:fr="Votre choix:"
+												 base:it="Vostra scelta:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_RUECKFAHRT_LETZTERGELTUNGSTAG</vertriebsbase:key>
+							<vertriebsbase:typ>DATUM</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Gültig bis:" base:de="Gültig bis:"
+												 base:en="Valid until:" base:fr="Valable jusqu’au:"
+												 base:it="Valido fino al:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_SICHERHEITSELEMENT_ID</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Ticket-ID"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_STANDORT</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Standort" base:de="Standort" base:en="Location"
+												 base:fr="Lieu" base:it="Luogo"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_TEILZAHLUNGSART_BETRAG</vertriebsbase:key>
+							<vertriebsbase:typ>GELDBETRAG</vertriebsbase:typ>
+							<vertriebsbase:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_TEILZAHLUNGSART_KEY</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>BAR</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_TRAEGERMEDIUMTYP_KEY</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>SICHERHEITSPAPIER</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_VERKEHRSMITTELEINSCHRAENKUNG</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Nur gültig für:" base:de="Nur gültig für:"
+												 base:en="Only valid for:" base:fr="Seulement valable pour:"
+												 base:it="Valido solo per:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_WEGANGABE</vertriebsbase:key>
+							<vertriebsbase:typ>WEGANGABE</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Gültig für" base:de="Gültig für" base:en="Valid for"
+												 base:fr="Valable pour" base:it="Valido per"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_WEGANGABE_ABGANG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Von:" base:de="Von:" base:en="From:" base:fr="De:"
+												 base:it="Di:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_WEGANGABE_BESTIMMUNG</vertriebsbase:key>
+							<vertriebsbase:typ>LOCALIZEDTEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Nach:" base:de="Nach:" base:en="To:" base:fr="Pour:"
+												 base:it="Per:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_WEGANGABE_ODER</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="oder" base:de="oder" base:en="or" base:fr="ou"
+												 base:it="o"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>LEISTUNG_ZAHLUNGSART_KEY</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>BAR</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_ADRESSE</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Adresse:" base:de="Adresse:" base:en="Address:"
+												 base:fr="Adresse:" base:it="Indirizzo:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_GEBURTSDATUM</vertriebsbase:key>
+							<vertriebsbase:typ>DATUM</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Geburtsdatum:" base:de="Geburtsdatum:"
+												 base:en="Date of birth:" base:fr="Date de naissance:"
+												 base:it="Data di nascita:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_GRUNDKARTE_NR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Grundkarte:" base:de="Grundkarte:"
+												 base:en="Basic card:" base:fr="Carte de base:"
+												 base:it="Tessera base:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_KFZ_NR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="SCHILD:" base:de="SCHILD:" base:en="REG. NO."
+												 base:fr="PLAQUE:" base:it="TARGA:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_KUNDE</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Kunde, Kundin" base:de="Kunde, Kundin"
+												 base:en="Customer" base:fr="Client, cliente" base:it="Cliente"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_KUNDENNUMMER</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Kunden-Nr.:" base:de="Kunden-Nr.:"
+												 base:en="Customer no.:" base:fr="No client:" base:it="No cliente:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_LAND</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Land:" base:de="Land:" base:en="Country:"
+												 base:fr="Pays:" base:it="Paese:"/>
+							<vertriebsbase:text>CH</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_NAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Name:" base:de="Name:" base:en="Name:" base:fr="Nom:"
+												 base:it="Cognome:"/>
+							<vertriebsbase:text>Doe</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_NAME_VORNAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Name/Vorname:" base:de="Name/Vorname:"
+												 base:en="Name/First name:" base:fr="Nom/Prénom:"
+												 base:it="Cognome/Nome:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_ORT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Ort" base:de="Ort" base:en="City" base:fr="Lieu"
+												 base:it="Localita"/>
+							<vertriebsbase:text>4000</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_PASS_NR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Passnummer:" base:de="Passnummer:"
+												 base:en="Pass no.:" base:fr="Numéro de passeport:"
+												 base:it="No passaporto:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_PLZ</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="PLZ" base:de="PLZ" base:en="Postal Code"
+												 base:fr="NPA" base:it="NPA"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_PLZ_ORT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="PLZ/Ort:" base:de="PLZ/Ort:"
+												 base:en="Postcode/town or city:" base:fr="NPA/lieu:"
+												 base:it="NPA/località:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_POSTFACH</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Postfach:" base:de="Postfach:" base:en="Post Box:"
+												 base:fr="Case postale:" base:it="Casella postale:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_POSTFACH_VORHANDEN</vertriebsbase:key>
+							<vertriebsbase:typ>BOOLEAN</vertriebsbase:typ>
+							<vertriebsbase:boolean>false</vertriebsbase:boolean>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_STRASSEHNR</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Adresse:" base:de="Adresse:" base:en="Address:"
+												 base:fr="Adresse:" base:it="Indirizzo:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_UNTERSCHRIFT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Unterschrift:" base:de="Unterschrift:"
+												 base:en="Signature:" base:fr="Signature:" base:it="Firma:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>PERSON_VORNAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Vorname:" base:de="Vorname:" base:en="First name:"
+												 base:fr="Prénom:" base:it="Nome:"/>
+							<vertriebsbase:text>John</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>REISENDER</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Reisender" base:de="Reisender" base:en="Traveller"
+												 base:fr="Voyageur" base:it="Viaggiatore"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAGSPARTNER</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Vertragspartner" base:de="Vertragspartner"
+												 base:en="Contractual partner" base:fr="Partie contractante"
+												 base:it="Partner contrattuale"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_GEBURTSDATUM</vertriebsbase:key>
+							<vertriebsbase:typ>DATUM</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Geburtsdatum:" base:de="Geburtsdatum:"
+												 base:en="Date of birth:" base:fr="Date de naissance:"
+												 base:it="Data di nascita:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_KUNDENNUMMER</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Kunden-Nr.:" base:de="Kunden-Nr.:"
+												 base:en="Customer no.:" base:fr="No client:" base:it="No cliente:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_LAND</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Land/PLZ/Ort:" base:de="Land/PLZ/Ort:"
+												 base:en="Country/ZIP/Locality:" base:fr="Pays/NPA/Lieu:"
+												 base:it="Stato/NPA/Località:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_NAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Name:" base:de="Name:" base:en="Family Name:"
+												 base:fr="Nom:" base:it="Cognome:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_ORGANISATION1</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Firmenname:" base:de="Firmenname:"
+												 base:en="Company name:" base:fr="Nom de l'entreprise:"
+												 base:it="Nome della ditta:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_ORGANISATION2</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Firmenname 2. Zeile" base:de="Firmenname 2. Zeile"
+												 base:en="Company name 2nd line" base:fr="Nom 2e ligne"
+												 base:it="Ragione sociale 2a riga"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_POSTFACH</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Postfach:" base:de="Postfach:" base:en="Post Box:"
+												 base:fr="Case postale:" base:it="Casello postale:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_STRASSE</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Adresse:" base:de="Adresse:" base:en="Address:"
+												 base:fr="Adresse:" base:it="Indirizzo:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRAG_VERTRAGSPARTNER_VORNAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Vorname:" base:de="Vorname:" base:en="First name:"
+												 base:fr="Prénom:" base:it="Nome:"/>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_AUSGABEGERAET</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Arbeitsplatz-Nr.:" base:de="Arbeitsplatz-Nr.:"
+												 base:en="Workspace no.:" base:fr="Poste de travail n°:"
+												 base:it="No postazione di lavoro:"/>
+							<vertriebsbase:text>1</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_DIENSTSTELLE_BEZEICHNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:label base:defaultWert="Dienststelle:" base:de="Dienststelle:"
+												 base:en="Department:" base:fr="Service:" base:it="Servizio:"/>
+							<vertriebsbase:text>BLT Barakuda</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_DIENSTSTELLE_NR</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:ganzZahl>5318</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_LEISTUNGSVERMITTLER_KENNUNG</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>BLT</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_LEISTUNGSVERMITTLER_PARTNERCODE</vertriebsbase:key>
+							<vertriebsbase:typ>GANZZAHL</vertriebsbase:typ>
+							<vertriebsbase:ganzZahl>37</vertriebsbase:ganzZahl>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VERTRIEB_LEISTUNGSVERMITTLER_PARTNERKUERZEL</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>BLT-blt</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_ADRESSE_LAND</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>CH</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_ADRESSE_ORT</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>4000</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_KUNDENNAME_NAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>Doe</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+						<vertriebsbase:druckAttribut>
+							<vertriebsbase:key>VP_KUNDENNAME_VORNAME</vertriebsbase:key>
+							<vertriebsbase:typ>TEXT</vertriebsbase:typ>
+							<vertriebsbase:text>John</vertriebsbase:text>
+						</vertriebsbase:druckAttribut>
+					</ns14:beleg>
+				</ns14:leistungsDruckDaten>
+			</ns14:belegResponse>
+		</ns14:erstelleBelegeResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

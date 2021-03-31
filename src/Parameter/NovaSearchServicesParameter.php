@@ -29,4 +29,11 @@ class NovaSearchServicesParameter extends NovaIdentifierParameter
      * @var Chronos|null
      */
     public $periodOfUseEnd;
+
+    /**
+     * The leistungsId.
+     *
+     * @var string|null
+     */
+    public $serviceId;
 }

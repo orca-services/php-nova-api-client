@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ns14:bestaetigeProduktionResponse xmlns:ns14="http://nova.voev.ch/services/v14/vertrieb"
+										   xmlns="http://nova.voev.ch/services/v14/vertrieb"
+										   xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner"
+										   xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass"
+										   xmlns:inkasso="http://nova.voev.ch/services/v14/inkasso"
+										   xmlns:base="http://nova.voev.ch/services/v14/base"
+										   xmlns:nova-preisauskunft="http://nova.voev.ch/services/v14/preisauskunft"
+										   xmlns:offlinemanagement="http://nova.voev.ch/services/v14/vertrieb/offlinemanagement"
+										   xmlns:nova-erneuerungsinfo="http://nova.voev.ch/services/v14/vertrieb/erneuerungsinfo"
+										   xmlns:nova-protokoll="http://nova.voev.ch/services/v14/vertrieb/protokoll"
+										   xmlns:vs="http://nova.voev.ch/services/v14/vertrieb/vertriebsstammdaten"
+										   xmlns:vertriebsbase="http://nova.voev.ch/services/v14/vertriebsbase"
+										   xmlns:nova-powertools="http://nova.voev.ch/services/v14/powertools"
+										   xmlns:nova-leistungnotiz="http://nova.voev.ch/services/v14/leistungnotiz"
+										   xmlns:ns15="http://nova.voev.ch/services/v14/leistunganteile">
+			<ns14:bestaetigeProduktionResponse ns14:anfrageProtokollId="d08bd26a-e220-488d-948c-398da956db7d"
+											   ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+				<ns14:meldungen/>
+				<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:SAVLeistung"
+							   ns14:traegerMedium="SICHERHEITSPAPIER" ns14:leistungsId="15900020446658"
+							   ns14:leistungsReferenz="0020446658" ns14:leistungsStatus="PRODUKTION_ERFOLGREICH"
+							   ns14:offerteGueltigBis="2021-03-31T16:25:24.000+02:00"
+							   ns14:verkaufsZeitpunkt="2021-03-31T15:55:44.000+02:00"
+							   ns14:erstellungsZeitpunkt="2021-03-31T15:56:55.000+02:00" ns14:produktNummer="80026"
+							   ns14:generationStichDatum="2021-03-31"
+							   ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+					<ns14:leistungsTyp ns14:code="ERSTATTUNG">
+						<ns14:bezeichnung base:defaultWert="ERSTATTUNG" base:de="ERSTATTUNG" base:en="ERSTATTUNG"
+										  base:fr="ERSTATTUNG" base:it="ERSTATTUNG"/>
+					</ns14:leistungsTyp>
+					<ns14:verkaufsParameter ns14:code="ADRESSE">
+						<ns14:wert>
+							<vertriebsbase:adresse base:land="CH" base:ort="4000" base:postfachVorhanden="false"/>
+						</ns14:wert>
+					</ns14:verkaufsParameter>
+					<ns14:verkaufsParameter ns14:code="KUNDENNAME">
+						<ns14:wert>
+							<vertriebsbase:nameVorname base:name="Doe" base:vorname="John"/>
+						</ns14:wert>
+					</ns14:verkaufsParameter>
+					<ns14:zahlungsInformation>
+						<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+							<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+						</ns14:zahlungsArt>
+						<ns14:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+					</ns14:zahlungsInformation>
+					<ns14:verkaufsPreis>
+						<base:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+						<base:mwstAnteil base:betrag="-105.00" base:mwstSatz="7.70"/>
+					</ns14:verkaufsPreis>
+					<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+												ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+						<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+											base:bezeichnung="BLT_Online_Barakuda"/>
+					</ns14:verkaeuferInformation>
+					<ns14:savProtokoll/>
+					<ns14:totalErstattungsBetraege base:betrag="-105.00" base:waehrung="CHF"/>
+					<ns14:erstatteteLeistung ns14:leistungsId="15900020445739">
+						<ns14:originalPreis>
+							<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+							<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+						</ns14:originalPreis>
+						<ns14:erstattungsDaten ns14:erstattungsTyp="VOLLERSTATTUNG"
+											   ns14:entschaedigungDatum="2021-03-31">
+							<ns14:erstattungsBetrag>
+								<base:geldBetrag base:betrag="-105.00" base:waehrung="CHF"/>
+								<base:mwstAnteil base:betrag="-105.00" base:mwstSatz="7.70"/>
+							</ns14:erstattungsBetrag>
+							<ns14:preisBenutzterTeil base:betrag="0.00" base:waehrung="CHF"/>
+							<ns14:benutzterTeil>
+								<base:geldBetrag base:betrag="0.00" base:waehrung="CHF"/>
+								<base:mwstAnteil base:betrag="0.00" base:mwstSatz="7.70"/>
+							</ns14:benutzterTeil>
+							<ns14:erstattungsGrund vertriebsbase:code="RUECKGABE_VOR_1GELTUNGSTAG">
+								<vertriebsbase:bezeichnung base:defaultWert="Rückgabe vor 1. Geltungstag"
+														   base:de="Rückgabe vor 1. Geltungstag"
+														   base:en="Returned before 1st day of validity"
+														   base:fr="Restitution avant le 1er jour de validité"
+														   base:it="Restituzione prima del 1° giorno di validità"/>
+							</ns14:erstattungsGrund>
+						</ns14:erstattungsDaten>
+						<ns14:zahlungsInformation>
+							<ns14:zahlungsArt vertriebsbase:zahlungsArtCode="BAR">
+								<vertriebsbase:bezeichnung base:defaultWert="Barzahlung"/>
+							</ns14:zahlungsArt>
+							<ns14:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						</ns14:zahlungsInformation>
+					</ns14:erstatteteLeistung>
+				</ns14:leistung>
+			</ns14:bestaetigeProduktionResponse>
+		</ns14:bestaetigeProduktionResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

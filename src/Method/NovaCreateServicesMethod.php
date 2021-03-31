@@ -133,16 +133,50 @@ final class NovaCreateServicesMethod implements NovaMethod
         $serviceRequest->setAttribute('ns18:externeLeistungsReferenzId', '');
         $serviceRequest->setAttribute('ns18:externeReisendenReferenzId', '');
 
-        $travellerParameter = $dom->createElement('ns18:verkaufsParameter');
-        $serviceRequest->appendChild($travellerParameter);
+        //
+        // Key/Value pairs
+        //
 
-        $travellerParameter->setAttribute('ns18:code', 'REISENDER');
+        // Address
+        if ($parameter->country && $parameter->postalCode) {
+            $addressSaleParameter = $dom->createElement('ns18:verkaufsParameter');
+            $serviceRequest->appendChild($addressSaleParameter);
+            $addressSaleParameter->setAttribute('ns18:code', 'ADRESSE');
 
-        $travellerValue = $dom->createElement('ns18:wert');
-        $travellerParameter->appendChild($travellerValue);
+            $addressValue = $addressSaleParameter->appendChild($dom->createElement('wert'));
 
-        $distributionBaseTkid = $dom->createElement('vertriebsbase:tkid', $parameter->tkId);
-        $travellerValue->appendChild($distributionBaseTkid);
+            $distributionBase = $dom->createElement('vertriebsbase:adresse');
+            $addressValue->appendChild($distributionBase);
+            $distributionBase->setAttribute('base:land', $parameter->country);
+            $distributionBase->setAttribute('base:ort', $parameter->postalCode);
+        }
+
+        if ($parameter->lastName && $parameter->firstName) {
+            $customerSaleParameter = $dom->createElement('ns18:verkaufsParameter');
+            $serviceRequest->appendChild($customerSaleParameter);
+            $customerSaleParameter->setAttribute('ns18:code', 'KUNDENNAME');
+
+            $customerValue = $customerSaleParameter->appendChild($dom->createElement('wert'));
+
+            $distributionName = $dom->createElement('vertriebsbase:nameVorname');
+            $customerValue->appendChild($distributionName);
+            $distributionName->setAttribute('base:name', $parameter->lastName);
+            $distributionName->setAttribute('base:vorname', $parameter->firstName);
+        }
+
+        // TKID
+        if ($parameter->tkId) {
+            $travellerParameter = $dom->createElement('ns18:verkaufsParameter');
+            $serviceRequest->appendChild($travellerParameter);
+
+            $travellerParameter->setAttribute('ns18:code', 'REISENDER');
+
+            $travellerValue = $dom->createElement('ns18:wert');
+            $travellerParameter->appendChild($travellerValue);
+
+            $distributionBaseTkid = $dom->createElement('vertriebsbase:tkid', $parameter->tkId);
+            $travellerValue->appendChild($distributionBaseTkid);
+        }
 
         return (string)$dom->saveXML();
     }
@@ -185,7 +219,7 @@ final class NovaCreateServicesMethod implements NovaMethod
             $serviceItem->serviceReference = $serviceNode->getAttribute('leistungsReferenz');
             $serviceItem->serviceStatus = $serviceNode->getAttribute('leistungsStatus');
             $serviceItem->productNumber = $serviceNode->getAttribute('produktNummer');
-            $serviceItem->tkId = $xml->getNodeValue('//tkid', $serviceNode);
+            $serviceItem->tkId = $xml->findNodeValue('//tkid', $serviceNode);
             $serviceItem->price = $xml->getAttributeValue('verkaufsPreis/geldBetrag/@betrag', $serviceNode);
             $serviceItem->currency = $xml->getAttributeValue('verkaufsPreis/geldBetrag/@waehrung', $serviceNode);
             $serviceItem->vatAmount = $xml->getAttributeValue('verkaufsPreis/mwstAnteil/@betrag', $serviceNode);

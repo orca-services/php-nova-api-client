@@ -20,4 +20,24 @@ final class NovaCreateServicesParameter extends NovaIdentifierParameter
      * @var string
      */
     public $tkId;
+
+    /**
+     * @var string
+     */
+    public $firstName = '';
+
+    /**
+     * @var string
+     */
+    public $lastName = '';
+
+    /**
+     * @var string
+     */
+    public $country = '';
+
+    /**
+     * @var string
+     */
+    public $postalCode = '';
 }

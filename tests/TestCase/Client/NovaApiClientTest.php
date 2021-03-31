@@ -3,20 +3,15 @@
 namespace OrcaServices\NovaApi\Test\TestCase\Client;
 
 use Cake\Chronos\Chronos;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Psr7\Response;
-use OrcaServices\NovaApi\Client\NovaApiClient;
-use OrcaServices\NovaApi\Configuration\NovaApiConfiguration;
 use OrcaServices\NovaApi\Parameter\NovaCheckSwissPassValidityParameter;
 use OrcaServices\NovaApi\Parameter\NovaConfirmReceiptsParameter;
 use OrcaServices\NovaApi\Parameter\NovaCreateOffersParameter;
 use OrcaServices\NovaApi\Parameter\NovaCreateReceiptsParameter;
 use OrcaServices\NovaApi\Parameter\NovaCreateServicesParameter;
-use OrcaServices\NovaApi\Parameter\NovaIdentifierParameter;
 use OrcaServices\NovaApi\Parameter\NovaPurchaseServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchPartnerParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchServicesParameter;
+use OrcaServices\NovaApi\Test\Traits\NovaClientTestTrait;
 use OrcaServices\NovaApi\Test\Traits\UnitTestTrait;
 use OrcaServices\NovaApi\Type\GenderType;
 use PHPUnit\Framework\TestCase;
@@ -26,82 +21,8 @@ use PHPUnit\Framework\TestCase;
  */
 class NovaApiClientTest extends TestCase
 {
+    use NovaClientTestTrait;
     use UnitTestTrait;
-
-    /**
-     * Create instance.
-     *
-     * @param array $responses The mocked responses
-     *
-     * @return NovaApiClient The instance
-     */
-    private function createNovaApiClient(array $responses): NovaApiClient
-    {
-        Chronos::setTestNow('2019-09-01 00:00:00');
-
-        $settings = $this->getSettings();
-
-        // To make real http calls, just comment out this line
-        $settings = $this->mockNovaGuzzleClient($settings, $responses);
-
-        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
-
-        return $this->getContainer()->get(NovaApiClient::class);
-    }
-
-    /**
-     * Mock NOVA Guzzle client and single sign on (SSO).
-     *
-     * @param array $settings The nova api settings
-     * @param array $responses The mocked responses
-     *
-     * @return array
-     */
-    private function mockNovaGuzzleClient(array $settings, array $responses): array
-    {
-        // Append the login as first response
-        $loginResponse = new Response();
-        $loginResponse->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/LoginResponse.json')
-        );
-
-        array_unshift($responses, $loginResponse);
-
-        $settings['default']['handler'] = HandlerStack::create(new MockHandler($responses));
-
-        return $settings;
-    }
-
-    /**
-     * Returns the default settings.
-     *
-     * @return array
-     */
-    private function getSettings(): array
-    {
-        $filename = file_exists(__DIR__ . '/../../config.php')
-            ? '/../../config.php'
-            : '/../../config.php.dist';
-
-        return include __DIR__ . $filename;
-    }
-
-    /**
-     * Set identifier.
-     *
-     * @param NovaIdentifierParameter $parameter The params
-     *
-     * @return void
-     */
-    private function setTestIdentifier(NovaIdentifierParameter $parameter)
-    {
-        $parameter->correlationId = '101563d5-f3c4-4723-888b-6ea4bf321c32';
-        $parameter->serviceAgent = '00';
-        $parameter->channelCode = '000';
-        $parameter->pointOfSale = '0000';
-        $parameter->distributionPoint = $parameter->pointOfSale;
-        $parameter->saleDeviceId = '1';
-    }
 
     /**
      * Test.
@@ -111,15 +32,16 @@ class NovaApiClientTest extends TestCase
     public function testSearchPartnerByTkid()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchPartnerResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/SearchPartnerResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaSearchPartnerParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
 
         $actual = $client->searchPartner($parameter);
@@ -158,15 +80,16 @@ class NovaApiClientTest extends TestCase
     public function testSearchPartnerByCardNumber()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchPartnerResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/SearchPartnerResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaSearchPartnerParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->cardNumber = 'DAW856';
 
         $actual = $client->searchPartner($parameter);
@@ -190,15 +113,16 @@ class NovaApiClientTest extends TestCase
     public function testSearchPartnerByPassengerInformation()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchPartnerResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/SearchPartnerResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaSearchPartnerParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->firstName = 'Mustermann';
         $parameter->lastName = 'Max';
         $parameter->mail = 'max.mustermann@example.com';
@@ -242,15 +166,16 @@ class NovaApiClientTest extends TestCase
         int $messageCount
     ) {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents($responseFile)
+        $responses = $this->createResponses(
+            [
+                $responseFile,
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaCheckSwissPassValidityParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
 
         $parameter->tkId = $tkId;
 
@@ -272,7 +197,7 @@ class NovaApiClientTest extends TestCase
             'OK' => [
                 // Max Mustermann with valid SwissPass
                 '949e2e6a-fdd1-4f07-8784-201e588ae834',
-                __DIR__ . '/../../Ressources/Response/CheckSwissPassValidityResponse.xml',
+                __DIR__ . '/../../Ressources/Response/Client/CheckSwissPassValidityResponse.xml',
                 'OK',
                 'SP_OK',
                 0,
@@ -280,7 +205,7 @@ class NovaApiClientTest extends TestCase
             'SP_NICHT_OK_FOTO_NICHT_OK' => [
                 // Hans Meier, with pobox and email
                 '05cd0051-649e-4c0e-a54e-3e5e0596f8dc',
-                __DIR__ . '/../../Ressources/Response/CheckSwissPassValidityNotOkResponse.xml',
+                __DIR__ . '/../../Ressources/Response/Client/CheckSwissPassValidityNotOkResponse.xml',
                 'OK',
                 'SP_NICHT_OK_FOTO_NICHT_OK',
                 1,
@@ -296,15 +221,16 @@ class NovaApiClientTest extends TestCase
     public function testCreateOffersClass2()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/CreateOffersResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/CreateOffersResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaCreateOffersParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
         $parameter->novaProductNumber = '51648';
         $parameter->dateOfBirth = Chronos::createFromDate(1982, 03, 28);
@@ -351,15 +277,16 @@ class NovaApiClientTest extends TestCase
     public function testCreateService()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/CreateServiceResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/CreateServiceResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaCreateServicesParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
         $parameter->novaOfferId = '_5c63dc7d-62e5-4f3a-a761-464488e92000';
 
@@ -396,15 +323,16 @@ class NovaApiClientTest extends TestCase
     public function testPurchaseService()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/PurchaseServiceResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/PurchaseServiceResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaPurchaseServicesParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->novaServiceId = '15900011821804';
         $parameter->price = 105.00;
         $parameter->currency = 'CHF';
@@ -443,15 +371,16 @@ class NovaApiClientTest extends TestCase
     public function testCreateReceipt()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/CreateReceiptsResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/CreateReceiptsResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaCreateReceiptsParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->novaServiceId = '15900011821804';
 
         $actual = $client->createReceipt($parameter);
@@ -487,15 +416,16 @@ class NovaApiClientTest extends TestCase
     public function testConfirmReceipt()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/ConfirmReceiptResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/ConfirmReceiptResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaConfirmReceiptsParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->novaServiceId = '15900011821804';
 
         $actual = $client->confirmReceipt($parameter);
@@ -531,15 +461,16 @@ class NovaApiClientTest extends TestCase
     public function testSearchServicesByTkId()
     {
         // Create a mocked response queue
-        $response = new Response();
-        $response->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../../Ressources/Response/SearchServicesResponse.xml')
+        $responses = $this->createResponses(
+            [
+                __DIR__ . '/../../Ressources/Response/Client/SearchServicesResponse.xml',
+            ]
         );
 
-        $client = $this->createNovaApiClient([$response]);
+        $client = $this->createNovaApiClient($responses);
 
         $parameter = new NovaSearchServicesParameter();
-        $this->setTestIdentifier($parameter);
+        $this->setIdentifier($parameter);
         $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
         $parameter->periodOfUseStart = Chronos::now()->subDays(1);
         $parameter->periodOfUseEnd = Chronos::now()->addDay();

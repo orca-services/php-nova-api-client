@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header/>
+	<soapenv:Body>
+		<ns14:offeriereLeistungenResponse xmlns:ns14="http://nova.voev.ch/services/v14/vertrieb"
+										  xmlns="http://nova.voev.ch/services/v14/vertrieb"
+										  xmlns:novagp="http://nova.voev.ch/services/v14/geschaeftspartner"
+										  xmlns:novasp-swisspass="http://nova.voev.ch/services/v14/swisspass"
+										  xmlns:inkasso="http://nova.voev.ch/services/v14/inkasso"
+										  xmlns:base="http://nova.voev.ch/services/v14/base"
+										  xmlns:nova-preisauskunft="http://nova.voev.ch/services/v14/preisauskunft"
+										  xmlns:offlinemanagement="http://nova.voev.ch/services/v14/vertrieb/offlinemanagement"
+										  xmlns:nova-erneuerungsinfo="http://nova.voev.ch/services/v14/vertrieb/erneuerungsinfo"
+										  xmlns:nova-protokoll="http://nova.voev.ch/services/v14/vertrieb/protokoll"
+										  xmlns:vs="http://nova.voev.ch/services/v14/vertrieb/vertriebsstammdaten"
+										  xmlns:vertriebsbase="http://nova.voev.ch/services/v14/vertriebsbase"
+										  xmlns:nova-powertools="http://nova.voev.ch/services/v14/powertools"
+										  xmlns:nova-leistungnotiz="http://nova.voev.ch/services/v14/leistungnotiz"
+										  xmlns:ns15="http://nova.voev.ch/services/v14/leistunganteile">
+			<ns14:offertenResponse ns14:anfrageProtokollId="149d8773-70b8-411c-a8cd-3d567c58c033"
+								   ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+				<ns14:meldungen/>
+				<ns14:leistung xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ns14:Leistung"
+							   ns14:enthaeltSwissPassKarte="false" ns14:benoetigtNeuesFoto="true"
+							   ns14:leistungsId="15900020444782" ns14:leistungsReferenz="0020444782"
+							   ns14:leistungsStatus="OFFERIERT" ns14:offerteGueltigBis="2021-03-31T15:44:40.000+02:00"
+							   ns14:erstellungsZeitpunkt="2021-03-31T15:14:40.000+02:00" ns14:produktNummer="51648"
+							   ns14:generationStichDatum="2021-05-15"
+							   ns14:datenReleaseId="135.7.20210330-2006.T.T.3927.0">
+					<ns14:leistungsTyp ns14:code="VERKAUF">
+						<ns14:bezeichnung base:defaultWert="VERKAUF" base:de="VERKAUF" base:en="VERKAUF"
+										  base:fr="VERKAUF" base:it="VERKAUF"/>
+					</ns14:leistungsTyp>
+					<ns14:verkaufsParameter ns14:code="REISENDER">
+						<ns14:wert>
+							<vertriebsbase:tkid>7f80a2ab-23b7-4903-8811-4800aa5a6845</vertriebsbase:tkid>
+						</ns14:wert>
+					</ns14:verkaufsParameter>
+					<ns14:verkaufsPreis>
+						<base:geldBetrag base:betrag="105.00" base:waehrung="CHF"/>
+						<base:mwstAnteil base:betrag="105.00" base:mwstSatz="7.70"/>
+					</ns14:verkaufsPreis>
+					<ns14:tarifStufe ns14:tarifOwner="460" ns14:tarifStufenCode="ALLE_ZONEN">
+						<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen" base:en="All Zones"
+											  base:fr="Toutes les zones" base:it="Tutte le zone"/>
+					</ns14:tarifStufe>
+					<ns14:verkaeuferInformation ns14:leistungsVermittler="37" ns14:verkaufsStelle="5318"
+												ns14:vertriebsPunkt="5318" ns14:verkaufsGeraeteId="1">
+						<ns14:verkaufsKanal base:kanalCode="901" base:kanalTyp="ONLINE" base:geschaeftsFeld="B2C"
+											base:bezeichnung="BLT_Online_Barakuda"/>
+					</ns14:verkaeuferInformation>
+					<ns14:savProtokoll/>
+					<ns14:nutzungsInfo ns14:ersterNutzungsGeltungsTag="2021-05-15">
+						<ns14:tarifStufe ns14:tarifOwner="460" ns14:tarifStufenCode="ALLE_ZONEN">
+							<ns14:tarifStufenText base:defaultWert="Alle Zonen" base:de="Alle Zonen" base:en="All Zones"
+												  base:fr="Toutes les zones" base:it="Tutte le zone"/>
+						</ns14:tarifStufe>
+						<ns14:vorverkaufsFrist>
+							<base:wert>2</base:wert>
+							<base:einheit base:code="MONATE">
+								<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+												  base:fr="Mois" base:it="Mesi"/>
+							</base:einheit>
+						</ns14:vorverkaufsFrist>
+						<ns14:nutzungsZeitraum>
+							<ns14:tarifierbarerZeitraum base:von="2021-05-15T00:00:00.000+02:00"
+														base:bis="2021-06-15T05:00:00.000+02:00"/>
+							<ns14:ausweisbarerZeitraum vertriebsbase:von="2021-05-15" vertriebsbase:bis="2021-06-14"/>
+						</ns14:nutzungsZeitraum>
+					</ns14:nutzungsInfo>
+					<ns14:produktEinflussFaktoren ns14:traegerMedium="SWISSPASS" ns14:klasse="KLASSE_2">
+						<ns14:kundenSegment ns14:kundenSegmentCode="PERSON_25+">
+							<ns14:bezeichnung base:defaultWert="Erwachsene" base:de="Erwachsene" base:en="Adults"
+											  base:fr="Adultes" base:it="Adulti"/>
+						</ns14:kundenSegment>
+						<ns14:geltungsDauer>
+							<ns14:nutzungsGeltungsDauer>
+								<base:wert>1</base:wert>
+								<base:einheit base:code="MONATE">
+									<base:bezeichnung base:defaultWert="Monate" base:de="Monate" base:en="Months"
+													  base:fr="Mois" base:it="Mesi"/>
+								</base:einheit>
+							</ns14:nutzungsGeltungsDauer>
+						</ns14:geltungsDauer>
+					</ns14:produktEinflussFaktoren>
+					<ns14:geltungsBereich ns14:id="gb2c3ba68d-5c5a-45e7-8ad5-748dcedd193c">
+						<ns14:wegAngabe vertriebsbase:tarifKlasse="VERBUND">
+							<vertriebsbase:reiseRouteSegment vertriebsbase:segmentTyp="INFO">
+								<vertriebsbase:bezeichnung base:defaultWert="Alle Zonen" base:de="Alle Zonen"
+														   base:en="All Zones" base:fr="Toutes les zones"
+														   base:it="Tutte le zone"/>
+							</vertriebsbase:reiseRouteSegment>
+						</ns14:wegAngabe>
+						<ns14:zonenGeltungsBereich>
+							<ns14:zonenBuendel ns14:pflichtZonenBuendel="false" ns14:alleZonen="true"
+											   ns14:tarifOwner="460" ns14:befahrungsTyp="RAUMZEIT"
+											   ns14:novaZonenTarifCode="460_MABO_AW_PERS">
+								<ns14:bezeichnung base:defaultWert=" "/>
+							</ns14:zonenBuendel>
+						</ns14:zonenGeltungsBereich>
+						<ns14:streckenGeltungsBereich/>
+					</ns14:geltungsBereich>
+				</ns14:leistung>
+			</ns14:offertenResponse>
+		</ns14:offeriereLeistungenResponse>
+	</soapenv:Body>
+</soapenv:Envelope>
