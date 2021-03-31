@@ -184,7 +184,7 @@ final class NovaPurchaseServicesMethod implements NovaMethod
             $serviceItem->serviceReference = $serviceNode->getAttribute('leistungsReferenz');
             $serviceItem->serviceStatus = $serviceNode->getAttribute('leistungsStatus');
             $serviceItem->productNumber = $serviceNode->getAttribute('produktNummer');
-            $serviceItem->tkId = $xml->getNodeValue('//tkid', $serviceNode);
+            $serviceItem->tkId = $xml->findNodeValue('//tkid', $serviceNode);
             $serviceItem->price = $xml->getAttributeValue('verkaufsPreis/geldBetrag/@betrag', $serviceNode);
             $serviceItem->currency = $xml->getAttributeValue('verkaufsPreis/geldBetrag/@waehrung', $serviceNode);
             $serviceItem->vatAmount = $xml->getAttributeValue('verkaufsPreis/mwstAnteil/@betrag', $serviceNode);
