@@ -29,4 +29,13 @@ return [
     'webservice' => [
         'base_uri' => 'https://example.com',
     ],
+    // Transport company identifier configuration
+    'client' => [
+        'correlation_id' => '101563d5-f3c4-4723-888b-6ea4bf321c32',
+        'service_agent' => '00',
+        'channel_code' => '000',
+        'point_of_sale' => '0000',
+        'distribution_point' => '0000',
+        'sale_device_id' => '1',
+    ]
 ];
