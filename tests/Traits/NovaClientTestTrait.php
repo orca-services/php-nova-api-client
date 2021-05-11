@@ -3,11 +3,10 @@
 namespace OrcaServices\NovaApi\Test\Traits;
 
 use Cake\Chronos\Chronos;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use OrcaServices\NovaApi\Client\NovaApiClient;
 use OrcaServices\NovaApi\Configuration\NovaApiConfiguration;
+use OrcaServices\NovaApi\Factory\NovaHttpClientFactory;
 use OrcaServices\NovaApi\Parameter\NovaIdentifierParameter;
 
 /**
@@ -27,11 +26,10 @@ trait NovaClientTestTrait
         Chronos::setTestNow('2019-09-01 00:00:00');
 
         $settings = $this->getSettings();
+        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
 
         // To make real http calls, just comment out this line
-        $settings = $this->mockNovaGuzzleClient($settings, $responses);
-
-        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
+        $this->mockNovaGuzzleClient($responses);
 
         return $this->getContainer()->get(NovaApiClient::class);
     }
@@ -39,12 +37,11 @@ trait NovaClientTestTrait
     /**
      * Mock NOVA Guzzle client and single sign on (SSO).
      *
-     * @param array $settings The nova api settings
      * @param array $responses The mocked responses
      *
-     * @return array
+     * @return void
      */
-    protected function mockNovaGuzzleClient(array $settings, array $responses): array
+    protected function mockNovaGuzzleClient(array $responses)
     {
         // Append the login as first response
         $loginResponse = new Response();
@@ -54,9 +51,7 @@ trait NovaClientTestTrait
 
         array_unshift($responses, $loginResponse);
 
-        $settings['default']['handler'] = HandlerStack::create(new MockHandler($responses));
-
-        return $settings;
+        $this->getContainer()->get(NovaHttpClientFactory::class)->setMockedResponses($responses);
     }
 
     /**

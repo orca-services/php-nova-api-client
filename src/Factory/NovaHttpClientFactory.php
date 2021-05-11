@@ -2,11 +2,14 @@
 
 namespace OrcaServices\NovaApi\Factory;
 
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
 use InvalidArgumentException;
 use OrcaServices\NovaApi\Client\NovaHttpClient;
 use OrcaServices\NovaApi\Configuration\NovaApiConfiguration;
 use OrcaServices\NovaApi\Method\NovaLoginMethod;
 use OrcaServices\NovaApi\Parser\NovaApiErrorParser;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Factory.
@@ -22,6 +25,16 @@ final class NovaHttpClientFactory
      * @var NovaApiErrorParser
      */
     private $novaErrorParser;
+
+    /**
+     * @var array
+     */
+    private $mockedResponses = [];
+
+    /**
+     * @var HandlerStack|null
+     */
+    private $handler;
 
     /**
      * The constructor.
@@ -79,10 +92,25 @@ final class NovaHttpClientFactory
      */
     private function createHttpClient(array $settings): NovaHttpClient
     {
-        if (empty($settings['base_uri'])) {
-            throw new InvalidArgumentException('The NOVA API base URI is not defined');
+        if ($this->mockedResponses || empty($settings['base_uri']) || $settings['base_uri'] === 'http://localhost/') {
+            // Use the same mocked handler stack for login and the endpoint client for testing
+            $this->handler = $this->handler ?: HandlerStack::create(new MockHandler($this->mockedResponses));
+            $settings['base_uri'] = 'http://localhost';
+            $settings['handler'] = $this->handler;
         }
 
         return new NovaHttpClient($settings);
+    }
+
+    /**
+     * Set mocked responses.
+     *
+     * @param ResponseInterface[] $responses The responses
+     *
+     * @return void
+     */
+    public function setMockedResponses(array $responses)
+    {
+        $this->mockedResponses = $responses;
     }
 }
