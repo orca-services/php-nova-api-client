@@ -22,6 +22,7 @@ return PhpCsFixer\Config::create()
         'increment_style' => ['style' => 'post'],
         'list_syntax' => ['syntax' => 'short'],
         'no_short_echo_tag' => true,
+        'phpdoc_summary' => false, // Summaries are like titles, no full stop
         'phpdoc_add_missing_param_annotation' => ['only_untyped' => false],
         'phpdoc_trim_consecutive_blank_line_separation' => true,
         'phpdoc_trim' => true,
