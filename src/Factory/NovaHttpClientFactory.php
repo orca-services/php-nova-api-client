@@ -12,7 +12,7 @@ use OrcaServices\NovaApi\Parser\NovaApiErrorParser;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Factory.
+ * NOVA HTTP Client Factory
  */
 final class NovaHttpClientFactory
 {
@@ -82,13 +82,11 @@ final class NovaHttpClientFactory
     }
 
     /**
-     *  Create a guzzle client for the API to use.
+     * Create a guzzle client for the API to use.
      *
      * @param array $settings The settings
-     *
-     * @throws InvalidArgumentException
-     *
      * @return NovaHttpClient The http client
+     * @throws InvalidArgumentException
      */
     private function createHttpClient(array $settings): NovaHttpClient
     {
