@@ -23,9 +23,12 @@ return PhpCsFixer\Config::create()
         'list_syntax' => ['syntax' => 'short'],
         'no_short_echo_tag' => true,
         'phpdoc_add_missing_param_annotation' => ['only_untyped' => false],
+        'phpdoc_trim_consecutive_blank_line_separation' => true,
+        'phpdoc_trim' => true,
         'phpdoc_align' => false,
         'phpdoc_no_empty_return' => false,
-        'phpdoc_order' => true, // psr-5
+        'phpdoc_order' => false, // We do not adhere to PSR-5 (draft)
+        'phpdoc_separation' => false, // No blank lines between different types of annotations
         'phpdoc_no_useless_inheritdoc' => false,
         'protected_to_private' => false,
         'yoda_style' => false,
