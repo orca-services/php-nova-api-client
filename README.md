@@ -28,6 +28,10 @@ built by [SBB](https://www.sbb.ch).
 composer require orca-services/nova-api
 ```
 
+## Change log
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
 ## Usage
 
 Documentation is at <https://orca-services.github.io/nova-api-php/>
