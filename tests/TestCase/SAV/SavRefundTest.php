@@ -14,6 +14,12 @@ use OrcaServices\NovaApi\Parameter\NovaCreateServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaPurchaseServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaSavCreateOffersParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchServicesParameter;
+use OrcaServices\NovaApi\Test\Response\SAV\CreateSavOffersTestResponse;
+use OrcaServices\NovaApi\Test\Response\SAV\SavConfirmReceiptTestResponse;
+use OrcaServices\NovaApi\Test\Response\SAV\SavCreateReceiptsTestResponse;
+use OrcaServices\NovaApi\Test\Response\SAV\SavCreateServiceTestResponse;
+use OrcaServices\NovaApi\Test\Response\SAV\SavPurchaseServiceTestResponse;
+use OrcaServices\NovaApi\Test\Response\SAV\SavSearchServicesTestResponse;
 use OrcaServices\NovaApi\Test\Traits\NovaClientTestTrait;
 use OrcaServices\NovaApi\Test\Traits\UnitTestTrait;
 use OrcaServices\NovaApi\Type\NovaSavReasonType;
@@ -35,16 +41,14 @@ class SavRefundTest extends TestCase
     public function testSavFullRefund()
     {
         // Create a mocked response queue
-        $responses = $this->createResponses(
-            [
-                __DIR__ . '/../../Resources/Response/SAV/SearchServicesResponse.xml',
-                __DIR__ . '/../../Resources/Response/SAV/CreateSavOffersResponse.xml',
-                __DIR__ . '/../../Resources/Response/SAV/CreateServiceResponse.xml',
-                __DIR__ . '/../../Resources/Response/SAV/PurchaseServiceResponse.xml',
-                __DIR__ . '/../../Resources/Response/SAV/CreateReceiptsResponse.xml',
-                __DIR__ . '/../../Resources/Response/SAV/ConfirmReceiptsResponse.xml',
-            ]
-        );
+        $responses = [
+            new SavSearchServicesTestResponse(),
+            new CreateSavOffersTestResponse(),
+            new SavCreateServiceTestResponse(),
+            new SavPurchaseServiceTestResponse(),
+            new SavCreateReceiptsTestResponse(),
+            new SavConfirmReceiptTestResponse(),
+        ];
 
         $this->createNovaApiClient($responses);
 

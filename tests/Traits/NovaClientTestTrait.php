@@ -99,9 +99,15 @@ trait NovaClientTestTrait
 
         foreach ($files as $file) {
             // Create a mocked response queue
-            $response = new Response();
-            $response->getBody()->write((string)file_get_contents($file));
-            $responses[] = $response;
+            if (is_string($file)) {
+                $response = new Response();
+                $response->getBody()->write((string)file_get_contents($file));
+                $responses[] = $response;
+
+                continue;
+            }
+
+            $responses[] = $file;
         }
 
         return $responses;

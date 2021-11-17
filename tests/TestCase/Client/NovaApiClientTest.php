@@ -11,6 +11,9 @@ use OrcaServices\NovaApi\Parameter\NovaCreateServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaPurchaseServicesParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchPartnerParameter;
 use OrcaServices\NovaApi\Parameter\NovaSearchServicesParameter;
+use OrcaServices\NovaApi\Test\Response\Client\CheckSwissPassValidityNotOkTestResponse;
+use OrcaServices\NovaApi\Test\Response\Client\CheckSwissPassValidityTestResponse;
+use OrcaServices\NovaApi\Test\Response\Client\SearchPartnerTestResponse;
 use OrcaServices\NovaApi\Test\Traits\NovaClientTestTrait;
 use OrcaServices\NovaApi\Test\Traits\UnitTestTrait;
 use OrcaServices\NovaApi\Type\GenderType;
@@ -32,11 +35,9 @@ class NovaApiClientTest extends TestCase
     public function testSearchPartnerByTkid()
     {
         // Create a mocked response queue
-        $responses = $this->createResponses(
-            [
-                __DIR__ . '/../../Resources/Response/Client/SearchPartnerResponse.xml',
-            ]
-        );
+        $responses = [
+            new SearchPartnerTestResponse(),
+        ];
 
         $client = $this->createNovaApiClient($responses);
 
@@ -80,11 +81,9 @@ class NovaApiClientTest extends TestCase
     public function testSearchPartnerByCardNumber()
     {
         // Create a mocked response queue
-        $responses = $this->createResponses(
-            [
-                __DIR__ . '/../../Resources/Response/Client/SearchPartnerResponse.xml',
-            ]
-        );
+        $responses = [
+            new SearchPartnerTestResponse(),
+        ];
 
         $client = $this->createNovaApiClient($responses);
 
@@ -113,11 +112,9 @@ class NovaApiClientTest extends TestCase
     public function testSearchPartnerByPassengerInformation()
     {
         // Create a mocked response queue
-        $responses = $this->createResponses(
-            [
-                __DIR__ . '/../../Resources/Response/Client/SearchPartnerResponse.xml',
-            ]
-        );
+        $responses = [
+            new SearchPartnerTestResponse(),
+        ];
 
         $client = $this->createNovaApiClient($responses);
 
@@ -151,7 +148,7 @@ class NovaApiClientTest extends TestCase
      * @dataProvider checkSwissPassValidityProvider
      *
      * @param string $tkId The tkId
-     * @param string $responseFile The responseFile
+     * @param object $response The response
      * @param string $status The status
      * @param string $result The result
      * @param int $messageCount The number of messages
@@ -160,17 +157,15 @@ class NovaApiClientTest extends TestCase
      */
     public function testCheckSwissPassValidity(
         string $tkId,
-        string $responseFile,
+        object $response,
         string $status,
         string $result,
         int $messageCount
     ) {
         // Create a mocked response queue
-        $responses = $this->createResponses(
-            [
-                $responseFile,
-            ]
-        );
+        $responses = [
+            $response,
+        ];
 
         $client = $this->createNovaApiClient($responses);
 
@@ -197,7 +192,7 @@ class NovaApiClientTest extends TestCase
             'OK' => [
                 // Max Mustermann with valid SwissPass
                 '949e2e6a-fdd1-4f07-8784-201e588ae834',
-                __DIR__ . '/../../Resources/Response/Client/CheckSwissPassValidityResponse.xml',
+                new CheckSwissPassValidityTestResponse(),
                 'OK',
                 'SP_OK',
                 0,
@@ -205,7 +200,7 @@ class NovaApiClientTest extends TestCase
             'SP_NICHT_OK_FOTO_NICHT_OK' => [
                 // Hans Meier, with pobox and email
                 '05cd0051-649e-4c0e-a54e-3e5e0596f8dc',
-                __DIR__ . '/../../Resources/Response/Client/CheckSwissPassValidityNotOkResponse.xml',
+                new CheckSwissPassValidityNotOkTestResponse(),
                 'OK',
                 'SP_NICHT_OK_FOTO_NICHT_OK',
                 1,
