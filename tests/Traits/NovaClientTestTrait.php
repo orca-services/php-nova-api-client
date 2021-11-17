@@ -46,7 +46,7 @@ trait NovaClientTestTrait
         // Append the login as first response
         $loginResponse = new Response();
         $loginResponse->getBody()->write(
-            (string)file_get_contents(__DIR__ . '/../Ressources/Response/Client/LoginResponse.json')
+            (string)file_get_contents(__DIR__ . '/../Resources/Response/Client/LoginResponse.json')
         );
 
         array_unshift($responses, $loginResponse);

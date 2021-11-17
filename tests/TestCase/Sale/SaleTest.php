@@ -35,11 +35,11 @@ class SaleTest extends TestCase
         // Create a mocked response queue
         $responses = $this->createResponses(
             [
-                __DIR__ . '/../../Ressources/Response/Sale/CreateOffersResponse.xml',
-                __DIR__ . '/../../Ressources/Response/Sale/CreateServiceResponse.xml',
-                __DIR__ . '/../../Ressources/Response/Sale/PurchaseServiceResponse.xml',
-                __DIR__ . '/../../Ressources/Response/Sale/CreateReceiptsResponse.xml',
-                __DIR__ . '/../../Ressources/Response/Sale/ConfirmReceiptsResponse.xml',
+                __DIR__ . '/../../Resources/Response/Sale/CreateOffersResponse.xml',
+                __DIR__ . '/../../Resources/Response/Sale/CreateServiceResponse.xml',
+                __DIR__ . '/../../Resources/Response/Sale/PurchaseServiceResponse.xml',
+                __DIR__ . '/../../Resources/Response/Sale/CreateReceiptsResponse.xml',
+                __DIR__ . '/../../Resources/Response/Sale/ConfirmReceiptsResponse.xml',
             ]
         );
 

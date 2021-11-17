@@ -37,12 +37,12 @@ class SavRefundTest extends TestCase
         // Create a mocked response queue
         $responses = $this->createResponses(
             [
-                __DIR__ . '/../../Ressources/Response/SAV/SearchServicesResponse.xml',
-                __DIR__ . '/../../Ressources/Response/SAV/CreateSavOffersResponse.xml',
-                __DIR__ . '/../../Ressources/Response/SAV/CreateServiceResponse.xml',
-                __DIR__ . '/../../Ressources/Response/SAV/PurchaseServiceResponse.xml',
-                __DIR__ . '/../../Ressources/Response/SAV/CreateReceiptsResponse.xml',
-                __DIR__ . '/../../Ressources/Response/SAV/ConfirmReceiptsResponse.xml',
+                __DIR__ . '/../../Resources/Response/SAV/SearchServicesResponse.xml',
+                __DIR__ . '/../../Resources/Response/SAV/CreateSavOffersResponse.xml',
+                __DIR__ . '/../../Resources/Response/SAV/CreateServiceResponse.xml',
+                __DIR__ . '/../../Resources/Response/SAV/PurchaseServiceResponse.xml',
+                __DIR__ . '/../../Resources/Response/SAV/CreateReceiptsResponse.xml',
+                __DIR__ . '/../../Resources/Response/SAV/ConfirmReceiptsResponse.xml',
             ]
         );
 
