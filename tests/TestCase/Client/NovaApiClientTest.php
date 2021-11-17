@@ -157,7 +157,7 @@ class NovaApiClientTest extends TestCase
      */
     public function testCheckSwissPassValidity(
         string $tkId,
-        object $response,
+        $response,
         string $status,
         string $result,
         int $messageCount
