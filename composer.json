@@ -12,7 +12,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^7.0",
+        "php": "^8.0",
         "ext-dom": "*",
         "cakephp/chronos": "^1|^2",
         "guzzlehttp/guzzle": "^6.5"
