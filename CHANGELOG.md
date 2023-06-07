@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Changed minimum version to PHP 7.2
+
+### Dependency Updated
+
+- Upgrading phpstan/phpstan (0.12.100 => 1.10.16)
+- php-cs-fixer/diff updated from v1.3.1 to v2.0.2 major
+- overtrue/phplint removed (installed version was 1.2.4)
+- friendsofphp/php-cs-fixer updated from v2.19.3 to v3.9.5 major
+
 ### Added
 
 - Add Code Climate with PHPMD enabled

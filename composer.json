@@ -1,6 +1,7 @@
 {
     "name": "orca-services/nova-api",
     "description": "A PHP client library for the NOVA API",
+    "license": "MIT",
     "keywords": [
         "nova",
         "api",
@@ -10,20 +11,18 @@
         "soap",
         "4klang"
     ],
-    "license": "MIT",
     "require": {
-        "php": "^7.0",
+        "php": "^7.2",
         "ext-dom": "*",
-        "cakephp/chronos": "^1|^2",
+        "cakephp/chronos": "^1 || ^2",
         "guzzlehttp/guzzle": "^6.5"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.16",
-        "overtrue/phplint": "^1.1",
+        "friendsofphp/php-cs-fixer": "^3",
         "php-di/php-di": "^6",
-        "phpstan/phpstan": "0.*",
-        "phpunit/phpunit": "^6|^7",
-        "squizlabs/php_codesniffer": "^3.4"
+        "phpstan/phpstan": "^1",
+        "phpunit/phpunit": "^6 || ^7",
+        "squizlabs/php_codesniffer": "^3"
     },
     "autoload": {
         "psr-4": {
@@ -39,20 +38,18 @@
         "sort-packages": true
     },
     "scripts": {
-        "build:check": [
-            "@lint",
-            "@cs:check",
-            "@sniffer:check",
-            "@phpstan",
-            "@test:coverage"
-        ],
-        "cs:check": "php-cs-fixer fix --dry-run --format=txt --verbose --diff --diff-format=udiff --config=.cs.php",
-        "cs:fix": "php-cs-fixer fix --config=.cs.php",
-        "lint": "phplint ./ --exclude=vendor --no-interaction --no-cache",
-        "phpstan": "phpstan analyse src --level=max -c phpstan.neon --no-progress --ansi",
+        "cs:check": "php-cs-fixer fix --dry-run --format=txt --verbose --diff --config=.cs.php --ansi",
+        "cs:fix": "php-cs-fixer fix --config=.cs.php --ansi",
         "sniffer:check": "phpcs --standard=phpcs.xml",
         "sniffer:fix": "phpcbf --standard=phpcs.xml",
+        "stan": "phpstan analyse -c phpstan.neon --no-progress --ansi",
         "test": "phpunit --configuration phpunit.xml --colors=always",
+        "test:all": [
+            "@cs:check",
+            "@sniffer:check",
+            "@stan",
+            "@test:coverage"
+        ],
         "test:coverage": "phpunit --configuration phpunit.xml --colors=always --coverage-clover build/logs/clover.xml --coverage-html build/coverage"
     }
 }
