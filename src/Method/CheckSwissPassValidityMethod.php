@@ -129,7 +129,7 @@ final class CheckSwissPassValidityMethod implements NovaMethod
     {
         $result = new NovaCheckSwissPassValidityResult();
         $xml = $xml->withoutNamespaces();
-        //$content = $xml->getXml();
+        // $content = $xml->getXml();
 
         // Find and append all messages
         foreach ($this->novaMessageParser->findNovaMessages($xml) as $message) {

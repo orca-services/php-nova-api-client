@@ -26,12 +26,12 @@ trait NovaClientTestTrait
         Chronos::setTestNow('2019-09-01 00:00:00');
 
         $settings = $this->getSettings();
-        $this->getContainer()->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
+        $this->container->set(NovaApiConfiguration::class, new NovaApiConfiguration($settings));
 
         // To make real http calls, just comment out this line
         $this->mockNovaGuzzleClient($responses);
 
-        return $this->getContainer()->get(NovaApiClient::class);
+        return $this->container->get(NovaApiClient::class);
     }
 
     /**
@@ -51,7 +51,7 @@ trait NovaClientTestTrait
 
         array_unshift($responses, $loginResponse);
 
-        $this->getContainer()->get(NovaHttpClientFactory::class)->setMockedResponses($responses);
+        $this->container->get(NovaHttpClientFactory::class)->setMockedResponses($responses);
     }
 
     /**

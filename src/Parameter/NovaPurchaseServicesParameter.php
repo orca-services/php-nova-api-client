@@ -17,9 +17,9 @@ final class NovaPurchaseServicesParameter extends NovaIdentifierParameter
     /**
      * The SBB article price.
      *
-     * @var string
+     * @var float
      */
-    public $price = '';
+    public $price = 0.00;
 
     /**
      * The currency.

@@ -73,20 +73,6 @@ final class XmlDocument
     }
 
     /**
-     * Add all namespaces automatically.
-     *
-     * @return void
-     */
-    public function registerAllNamespaces()
-    {
-        foreach ($this->xpath->query('//namespace::*') ?: [] as $namespaceNode) {
-            $prefix = str_replace('xmlns:', '', $namespaceNode->nodeName);
-            $namespaceUri = $namespaceNode->nodeValue;
-            $this->xpath->registerNamespace($prefix, $namespaceUri);
-        }
-    }
-
-    /**
      * Check if namespace exists.
      *
      * @param string $namespace The namespace name
@@ -114,15 +100,14 @@ final class XmlDocument
     {
         $nodes = $this->queryNodes($expression, $contextNode);
 
-        if (empty($nodes)
-            || $nodes->length === 0
-            || !($nodes->item(0) instanceof DOMElement)
-            || !($nodes->item(0) instanceof DOMNode)
+        if ($nodes->length === 0 ||
+            !($nodes->item(0) instanceof DOMElement) ||
+            !($nodes->item(0) instanceof DOMNode)
         ) {
             throw new InvalidXmlException(sprintf('XML DOM node [%s] not found.', $expression));
         }
 
-        return $nodes->item(0)->nodeValue;
+        return $nodes->item(0)->nodeValue ?? '';
     }
 
     /**
@@ -134,7 +119,7 @@ final class XmlDocument
      *
      * @return string|null The node value
      */
-    private function findSingleNodeValue(string $expression, DOMXPath $xpath, $contextNode = null)
+    private function findSingleNodeValue(string $expression, DOMXPath $xpath, $contextNode = null): ?string
     {
         if ($contextNode === null) {
             $node = $xpath->query($expression);
@@ -161,14 +146,13 @@ final class XmlDocument
      *
      * @return string|null The node value
      */
-    public function findNodeValue(string $expression, $contextNode = null)
+    public function findNodeValue(string $expression, $contextNode = null): ?string
     {
         $nodes = $this->queryNodes($expression, $contextNode);
 
-        if (empty($nodes)
-            || $nodes->length === 0
-            || !($nodes->item(0) instanceof DOMElement)
-            || !($nodes->item(0) instanceof DOMNode)
+        if ($nodes->length === 0 ||
+            !($nodes->item(0) instanceof DOMElement) ||
+            !($nodes->item(0) instanceof DOMNode)
         ) {
             return null;
         }
@@ -190,7 +174,7 @@ final class XmlDocument
     {
         $nodes = $this->queryNodes($expression, $contextNode);
 
-        if (empty($nodes) || $nodes->length === 0 || !($nodes instanceof DOMNodeList)) {
+        if ($nodes->length === 0) {
             throw new InvalidXmlException(sprintf('XML DOM attribute [%s] not found.', $expression));
         }
 
@@ -199,7 +183,7 @@ final class XmlDocument
             throw new InvalidXmlException(sprintf('XML DOM attribute [%s] not found.', $expression));
         }
 
-        return $attribute->nodeValue;
+        return $attribute->nodeValue ?? '';
     }
 
     /**

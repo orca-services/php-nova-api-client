@@ -62,7 +62,7 @@ final class NovaMessageParser
         // Check for action response errors
         $messageNodes = $xml->queryNodes(sprintf('//%smeldungen/%smeldung', $ns1, $ns2));
 
-        if (empty($messageNodes) || $messageNodes->length === 0) {
+        if ($messageNodes->length === 0) {
             return $messages;
         }
 

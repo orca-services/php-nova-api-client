@@ -10,20 +10,20 @@ final class GenderType
     /**
      * Men Gender Type.
      */
-    const MEN = 1;
+    public const MEN = 1;
 
     /**
      * Women Gender Type.
      */
-    const WOMEN = 2;
+    public const WOMEN = 2;
 
     /**
      * Reserved for later Gender Type.
      */
-    const RESERVED = 3;
+    public const RESERVED = 3;
 
     /**
      * Unknown Gender Type.
      */
-    const UNKNOWN = 4;
+    public const UNKNOWN = 4;
 }

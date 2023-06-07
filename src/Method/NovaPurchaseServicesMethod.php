@@ -140,7 +140,7 @@ final class NovaPurchaseServicesMethod implements NovaMethod
         $amount = $dom->createElement('ns18:geldBetrag');
         $paymentInformation->appendChild($amount);
 
-        $amount->setAttribute('base:betrag', $parameter->price);
+        $amount->setAttribute('base:betrag', (string)$parameter->price);
         $amount->setAttribute('base:waehrung', $parameter->currency);
 
         return (string)$dom->saveXML();

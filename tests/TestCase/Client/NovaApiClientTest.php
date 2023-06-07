@@ -68,9 +68,12 @@ class NovaApiClientTest extends TestCase
         $this->assertSame('max.mustermann@example.com', $partner->email);
         $this->assertSame('Mustermann', $partner->firstName); // should be the lastName
         $this->assertSame('Max', $partner->lastName); // should be the firstName
-        $this->assertSame('1982-03-28 00:00:00', $partner->dateOfBirth->toDateTimeString());
+        $this->assertSame(
+            '1982-03-28 00:00:00',
+            $partner->dateOfBirth ? $partner->dateOfBirth->toDateTimeString() : ''
+        );
         $this->assertSame(1, $partner->genderTypeId);
-        $this->assertSame('2019-09-02 08:13:28', $partner->changedAt->toDateTimeString());
+        $this->assertSame('2019-09-02 08:13:28', $partner->changedAt ? $partner->changedAt->toDateTimeString() : '');
     }
 
     /**
@@ -227,7 +230,7 @@ class NovaApiClientTest extends TestCase
         $parameter = new NovaCreateOffersParameter();
         $this->setIdentifier($parameter);
         $parameter->tkId = '949e2e6a-fdd1-4f07-8784-201e588ae834';
-        $parameter->novaProductNumber = '51648';
+        $parameter->novaProductNumber = 51648;
         $parameter->dateOfBirth = Chronos::createFromDate(1982, 03, 28);
         $parameter->genderTypeId = GenderType::MEN;
         $parameter->travelClass = 2;

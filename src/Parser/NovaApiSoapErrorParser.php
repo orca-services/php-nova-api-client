@@ -8,7 +8,7 @@ use OrcaServices\NovaApi\Result\NovaApiErrorList;
 use OrcaServices\NovaApi\Xml\XmlDocument;
 
 /**
- * Class.
+ * Error parser.
  */
 final class NovaApiSoapErrorParser
 {
@@ -120,7 +120,7 @@ final class NovaApiSoapErrorParser
 
         /** @var DOMNode $errorDetail */
         foreach ($errorList as $errorDetail) {
-            $errors = $errors->withError($errorDetail->localName, $errorDetail->nodeValue);
+            $errors = $errors->withError($errorDetail->localName ?? '', $errorDetail->nodeValue ?? '');
         }
 
         return $errors;
