@@ -14,7 +14,7 @@
     "require": {
         "php": "^7.2",
         "ext-dom": "*",
-        "cakephp/chronos": "^1 || ^2",
+        "cakephp/chronos": "^1 || ^2 || ^3",
         "guzzlehttp/guzzle": "^6.5"
     },
     "require-dev": {
